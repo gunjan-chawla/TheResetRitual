@@ -905,6 +905,20 @@
   .footer-content {
     grid-template-columns: 1fr 1fr;
   }
+  
+  .integration-showcase {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .integration-image-wrapper {
+    order: 2;
+  }
+  
+  .integration-details {
+    order: 1;
+    padding: 0;
+  }
 }
 
 @media (max-width: 768px) {
