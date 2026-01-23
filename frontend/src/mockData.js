@@ -100,6 +100,7 @@ export const programsData = {
 export const integrationData = {
   title: "Seamless Calendar Integration",
   description: "Rest rituals appear automatically in your team's calendars—no manual scheduling, no friction, no hassle.",
+  image: "https://images.unsplash.com/photo-1642360912445-61d71dd98400",
   platforms: [
     { name: "Google Calendar", supported: true },
     { name: "Outlook", supported: true },
