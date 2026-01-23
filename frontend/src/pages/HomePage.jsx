@@ -235,13 +235,42 @@ const HomePage = () => {
       {/* Calendar Integration */}
       <section className="section-container section-accent">
         <div className="container">
-          <div className="integration-box">
+          <div className="section-header">
             <h2 className="heading-2">{integrationData.title}</h2>
             <p className="body-large">{integrationData.description}</p>
-            <div className="platforms-list">
-              {integrationData.platforms.map((platform, index) => (
-                <div key={index} className="platform-badge">{platform.name}</div>
-              ))}
+          </div>
+          <div className="integration-showcase">
+            <div className="integration-image-wrapper">
+              <img 
+                src={integrationData.image} 
+                alt="Calendar integration interface" 
+                className="integration-image"
+              />
+            </div>
+            <div className="integration-details">
+              <h3 className="heading-3">Automatically Syncs With:</h3>
+              <div className="platforms-list">
+                {integrationData.platforms.map((platform, index) => (
+                  <div key={index} className="platform-badge">
+                    <Check size={20} className="check-icon" />
+                    {platform.name}
+                  </div>
+                ))}
+              </div>
+              <div className="integration-features">
+                <div className="integration-feature">
+                  <Check size={20} className="check-icon" />
+                  <span>Zero manual scheduling required</span>
+                </div>
+                <div className="integration-feature">
+                  <Check size={20} className="check-icon" />
+                  <span>Smart scheduling around existing meetings</span>
+                </div>
+                <div className="integration-feature">
+                  <Check size={20} className="check-icon" />
+                  <span>One-click join from calendar invite</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
