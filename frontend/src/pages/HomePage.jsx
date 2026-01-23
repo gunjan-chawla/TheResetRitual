@@ -1,47 +1,30 @@
 import React, { useState } from 'react';
-import { 
-  Monitor, CalendarX, Users, TrendingDown, ClipboardList, 
-  CalendarCheck, BarChart3, Video, Library, Building, 
-  Calendar, Award, LineChart, Briefcase, Home, Building2,
-  Mail, Phone, MapPin, ArrowRight, Check, Star, Play
-} from 'lucide-react';
+import { ArrowRight, Check, Mail, Phone, MapPin, Activity, Wind, Zap, Heart } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { Badge } from '../components/ui/badge';
 import { useToast } from '../hooks/use-toast';
 import {
   heroData,
-  problemsData,
+  trustLogos,
+  whyBreaksData,
+  whatIsResetRitualData,
   howItWorksData,
-  featuresData,
   programsData,
-  impactData,
+  integrationData,
   audienceData,
-  socialProofData,
+  testimonialsData,
   ctaData,
   contactFormFields
 } from '../mockData';
 
 const iconMap = {
-  monitor: Monitor,
-  'calendar-x': CalendarX,
-  users: Users,
-  'trending-down': TrendingDown,
-  'clipboard-list': ClipboardList,
-  'calendar-check': CalendarCheck,
-  'bar-chart-3': BarChart3,
-  video: Video,
-  library: Library,
-  building: Building,
-  calendar: Calendar,
-  award: Award,
-  'line-chart': LineChart,
-  briefcase: Briefcase,
-  home: Home,
-  'building-2': Building2
+  activity: Activity,
+  wind: Wind,
+  zap: Zap,
+  heart: Heart
 };
 
 const HomePage = () => {
@@ -101,10 +84,10 @@ const HomePage = () => {
             <span className="logo-text">Reset Ritual</span>
           </div>
           <div className="nav-links-desktop">
+            <a href="#what" className="nav-link">What We Do</a>
             <a href="#how-it-works" className="nav-link">How It Works</a>
             <a href="#programs" className="nav-link">Programs</a>
-            <a href="#impact" className="nav-link">Impact</a>
-            <a href="#clients" className="nav-link">Clients</a>
+            <a href="#testimonials" className="nav-link">Testimonials</a>
           </div>
           <div className="nav-actions">
             <Button onClick={scrollToContact} className="btn-primary">Get a Demo</Button>
@@ -117,243 +100,185 @@ const HomePage = () => {
         <div className="hero-content">
           <h1 className="hero-title">{heroData.headline}</h1>
           <p className="hero-subtitle">{heroData.subheading}</p>
+          <div className="hero-stat">{heroData.stat}</div>
           <div className="hero-cta-group">
             <Button onClick={scrollToContact} className="btn-primary btn-large">
-              Get a Demo <ArrowRight className="ml-2" size={20} />
+              Get a Demo <ArrowRight size={20} />
             </Button>
             <Button variant="outline" className="btn-secondary btn-large">
-              Talk to HR
+              Learn More
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Reset Ritual */}
-      <section className="section-container" id="why">
+      {/* Trust Logos */}
+      <section className="trust-section">
         <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{problemsData.title}</h2>
-            <p className="body-large section-subtitle">{problemsData.subtitle}</p>
-          </div>
-          <div className="problems-grid">
-            {problemsData.challenges.map((challenge, index) => {
-              const IconComponent = iconMap[challenge.icon];
-              return (
-                <Card key={index} className="problem-card">
-                  <CardHeader>
-                    <div className="icon-wrapper">
-                      {IconComponent && <IconComponent size={32} className="icon-accent" />}
-                    </div>
-                    <CardTitle className="heading-3">{challenge.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="body-medium">{challenge.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-          <div className="stat-callout">
-            <Star className="stat-icon" size={24} />
-            <p className="body-large stat-text">{problemsData.stat}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="section-container section-alt" id="how-it-works">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{howItWorksData.title}</h2>
-            <p className="body-large section-subtitle">{howItWorksData.subtitle}</p>
-          </div>
-          <div className="steps-container">
-            {howItWorksData.steps.map((step, index) => {
-              const IconComponent = iconMap[step.icon];
-              return (
-                <div key={index} className="step-card">
-                  <div className="step-number">{step.number}</div>
-                  <div className="step-icon-wrapper">
-                    {IconComponent && <IconComponent size={40} className="step-icon" />}
-                  </div>
-                  <h3 className="heading-3 step-title">{step.title}</h3>
-                  <p className="body-medium step-description">{step.description}</p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="cta-center">
-            <Button onClick={scrollToContact} className="btn-primary btn-large">
-              Get a Demo <ArrowRight className="ml-2" size={20} />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="section-container" id="features">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{featuresData.title}</h2>
-            <p className="body-large section-subtitle">{featuresData.subtitle}</p>
-          </div>
-          <div className="features-grid">
-            {featuresData.features.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon];
-              return (
-                <Card key={index} className="feature-card">
-                  <CardHeader>
-                    <div className="feature-header-row">
-                      <div className="icon-wrapper-large">
-                        {IconComponent && <IconComponent size={28} className="icon-accent" />}
-                      </div>
-                      {feature.badge && (
-                        <Badge className="feature-badge">{feature.badge}</Badge>
-                      )}
-                    </div>
-                    <CardTitle className="heading-3">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="body-medium">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Programs */}
-      <section className="section-container section-alt" id="programs">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{programsData.title}</h2>
-            <p className="body-large section-subtitle">{programsData.subtitle}</p>
-          </div>
-          <div className="programs-grid">
-            {programsData.programs.map((program, index) => (
-              <Card key={index} className="program-card">
-                <div className="program-image-wrapper">
-                  <img src={program.image} alt={program.title} className="program-image" />
-                </div>
-                <CardHeader>
-                  <div className="program-badge">{program.subtitle}</div>
-                  <CardTitle className="heading-2 program-title">{program.title}</CardTitle>
-                  <CardDescription className="body-medium">{program.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="program-features-list">
-                    {program.features.map((feature, idx) => (
-                      <li key={idx} className="program-feature-item">
-                        <Check size={20} className="check-icon" />
-                        <span className="body-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="btn-primary btn-full">
-                    {program.cta} <ArrowRight className="ml-2" size={18} />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact & Benefits */}
-      <section className="section-container" id="impact">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{impactData.title}</h2>
-            <p className="body-large section-subtitle">{impactData.subtitle}</p>
-          </div>
-          
-          {/* Stats */}
-          <div className="stats-grid">
-            {impactData.stats.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Benefits */}
-          <div className="benefits-grid">
-            {impactData.benefits.map((benefit, index) => (
-              <Card key={index} className="benefit-card">
-                <CardHeader>
-                  <CardTitle className="heading-3">{benefit.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="benefit-list">
-                    {benefit.items.map((item, idx) => (
-                      <li key={idx} className="benefit-item">
-                        <Check size={20} className="check-icon" />
-                        <span className="body-medium">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who It's For */}
-      <section className="section-container section-alt">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{audienceData.title}</h2>
-            <p className="body-large section-subtitle">{audienceData.subtitle}</p>
-          </div>
-          <div className="audience-grid">
-            {audienceData.audiences.map((audience, index) => {
-              const IconComponent = iconMap[audience.icon];
-              return (
-                <Card key={index} className="audience-card">
-                  <CardHeader>
-                    <div className="icon-wrapper-large">
-                      {IconComponent && <IconComponent size={36} className="icon-accent" />}
-                    </div>
-                    <CardTitle className="heading-3">{audience.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="body-medium">{audience.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="section-container" id="clients">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{socialProofData.title}</h2>
-            <p className="body-large section-subtitle">{socialProofData.subtitle}</p>
-          </div>
-          
-          {/* Client Logos */}
+          <p className="trust-title">Trusted by Leading Organizations</p>
           <div className="logos-grid">
-            {socialProofData.logos.map((logo, index) => (
+            {trustLogos.map((logo, index) => (
               <div key={index} className="logo-card">
                 <div className="logo-placeholder">{logo.name}</div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Testimonials */}
-          <div className="testimonials-grid">
-            {socialProofData.testimonials.map((testimonial, index) => (
+      {/* Why Breaks */}
+      <section className="section-container section-light">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">{whyBreaksData.title}</h2>
+            <p className="body-large section-subtitle">{whyBreaksData.subtitle}</p>
+          </div>
+          <div className="benefits-grid">
+            {whyBreaksData.benefits.map((benefit, index) => (
+              <div key={index} className="benefit-card">
+                <div className="benefit-stat">{benefit.stat}</div>
+                <h3 className="benefit-title">{benefit.title}</h3>
+                <p className="benefit-description">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What is Reset Ritual */}
+      <section className="section-container" id="what">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">{whatIsResetRitualData.title}</h2>
+            <p className="body-large section-subtitle">{whatIsResetRitualData.description}</p>
+          </div>
+          <div className="features-box">
+            <ul className="features-list">
+              {whatIsResetRitualData.features.map((feature, index) => (
+                <li key={index} className="feature-item">
+                  <Check size={24} className="check-icon" />
+                  <span className="feature-text">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="section-container section-light" id="how-it-works">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">{howItWorksData.title}</h2>
+          </div>
+          <div className="steps-container">
+            {howItWorksData.steps.map((step, index) => (
+              <div key={index} className="step-card">
+                <div className="step-header">
+                  <div className="step-number">{step.number}</div>
+                  <h3 className="step-title">{step.title}</h3>
+                </div>
+                <p className="step-description">{step.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="step-highlight">
+            {howItWorksData.highlight}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs */}
+      <section className="section-container" id="programs">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">{programsData.title}</h2>
+            <p className="body-large section-subtitle">{programsData.subtitle}</p>
+          </div>
+          <div className="programs-wrapper">
+            {/* Daily Rituals */}
+            <div className="program-box">
+              <p className="program-subtitle">{programsData.daily.subtitle}</p>
+              <h3 className="program-title">{programsData.daily.title}</h3>
+              <p className="program-description">{programsData.daily.description}</p>
+              <div className="program-categories">
+                {programsData.daily.categories.map((category, index) => {
+                  const IconComponent = iconMap[category.icon];
+                  return (
+                    <div key={index} className="category-item">
+                      {IconComponent && <IconComponent size={20} className="category-icon" />}
+                      <span>{category.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Quarterly Workshops */}
+            <div className="program-box">
+              <p className="program-subtitle">{programsData.quarterly.subtitle}</p>
+              <h3 className="program-title">{programsData.quarterly.title}</h3>
+              <p className="program-description">{programsData.quarterly.description}</p>
+              <ul className="program-options">
+                {programsData.quarterly.options.map((option, index) => (
+                  <li key={index} className="option-item">
+                    <Check size={20} className="check-icon" />
+                    <span>{option}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Calendar Integration */}
+      <section className="section-container section-accent">
+        <div className="container">
+          <div className="integration-box">
+            <h2 className="heading-2">{integrationData.title}</h2>
+            <p className="body-large">{integrationData.description}</p>
+            <div className="platforms-list">
+              {integrationData.platforms.map((platform, index) => (
+                <div key={index} className="platform-badge">{platform.name}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="section-container">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">{audienceData.title}</h2>
+          </div>
+          <div className="audience-grid">
+            {audienceData.audiences.map((audience, index) => (
+              <div key={index} className="audience-card">
+                <h3 className="audience-title">{audience.title}</h3>
+                <p className="audience-description">{audience.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-container section-light" id="testimonials">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-2">What Our Customers Are Saying</h2>
+          </div>
+          <div className="testimonials-container">
+            {testimonialsData.map((testimonial, index) => (
               <Card key={index} className="testimonial-card">
-                <CardContent className="testimonial-content">
-                  <div className="quote-icon">"</div>
-                  <p className="body-large testimonial-quote">{testimonial.quote}</p>
+                <CardContent>
+                  <p className="testimonial-quote">"{testimonial.quote}"</p>
                   <div className="testimonial-author">
+                    <div className="author-avatar">
+                      {testimonial.author.charAt(0)}
+                    </div>
                     <div className="author-info">
                       <p className="author-name">{testimonial.author}</p>
                       <p className="author-role">{testimonial.role}</p>
@@ -375,10 +300,7 @@ const HomePage = () => {
             <p className="body-large">{ctaData.subtitle}</p>
             <div className="cta-buttons">
               <Button onClick={scrollToContact} className="btn-primary btn-large">
-                {ctaData.primaryCta} <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button variant="outline" className="btn-secondary btn-large">
-                {ctaData.secondaryCta}
+                {ctaData.primaryCta} <ArrowRight size={20} />
               </Button>
             </div>
           </div>
@@ -386,7 +308,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="section-container section-alt" id="contact">
+      <section className="section-container section-light" id="contact">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
@@ -481,7 +403,7 @@ const HomePage = () => {
                     />
                   </div>
                   <Button type="submit" disabled={isSubmitting} className="btn-primary btn-full btn-large">
-                    {isSubmitting ? 'Sending...' : 'Request Demo'} <ArrowRight className="ml-2" size={20} />
+                    {isSubmitting ? 'Sending...' : 'Request Demo'} <ArrowRight size={20} />
                   </Button>
                 </form>
               </CardContent>
@@ -496,24 +418,22 @@ const HomePage = () => {
           <div className="footer-content">
             <div className="footer-column">
               <h3 className="footer-title">Reset Ritual</h3>
-              <p className="body-small footer-text">Wellness that works while you work.</p>
+              <p className="footer-text">12-minute rest rituals for holistic workplace wellness.</p>
             </div>
             <div className="footer-column">
               <h4 className="footer-heading">Product</h4>
               <ul className="footer-links">
+                <li><a href="#what" className="footer-link">What We Do</a></li>
                 <li><a href="#how-it-works" className="footer-link">How It Works</a></li>
                 <li><a href="#programs" className="footer-link">Programs</a></li>
-                <li><a href="#features" className="footer-link">Features</a></li>
-                <li><a href="#impact" className="footer-link">Impact</a></li>
               </ul>
             </div>
             <div className="footer-column">
               <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
                 <li><a href="#" className="footer-link">About Us</a></li>
-                <li><a href="#clients" className="footer-link">Clients</a></li>
+                <li><a href="#testimonials" className="footer-link">Testimonials</a></li>
                 <li><a href="#contact" className="footer-link">Contact</a></li>
-                <li><a href="#" className="footer-link">Careers</a></li>
               </ul>
             </div>
             <div className="footer-column">
@@ -521,12 +441,11 @@ const HomePage = () => {
               <ul className="footer-links">
                 <li><a href="#" className="footer-link">Privacy Policy</a></li>
                 <li><a href="#" className="footer-link">Terms of Service</a></li>
-                <li><a href="#" className="footer-link">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
           <div className="footer-bottom">
-            <p className="body-small footer-copyright">
+            <p className="footer-copyright">
               © 2025 Reset Ritual. All rights reserved.
             </p>
           </div>

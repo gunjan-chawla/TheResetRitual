@@ -1,227 +1,156 @@
 // Mock data for Reset Ritual website
 
 export const heroData = {
-  headline: "Reset Ritual — 15-Minute Wellness Breaks That Fit Into the Workday",
-  subheading: "Reduce stress, boost energy & connection through short, guided movement and reset sessions integrated into employees' calendars.",
-  image: "https://images.unsplash.com/photo-1739298061740-5ed03045b280?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjB0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjkxNjU3NDF8MA&ixlib=rb-4.1.0&q=85"
+  headline: "12-Minute Rest Rituals That Integrate Seamlessly Into Your Calendar",
+  subheading: "Live and guided sessions promoting holistic wellness for modern workplaces. Move, breathe, and reset—without disrupting your day.",
+  stat: "Employees taking regular 12-minute wellness breaks report 40% higher productivity and significantly lower burnout rates."
 };
 
-export const problemsData = {
-  title: "Why Reset Ritual?",
-  subtitle: "Modern workplaces face challenges that traditional wellness programs can't solve",
-  challenges: [
+export const trustLogos = [
+  { name: "Midea", placeholder: true },
+  { name: "Carrier", placeholder: true },
+  { name: "Shiprocket", placeholder: true },
+  { name: "Client 4", placeholder: true },
+  { name: "Client 5", placeholder: true },
+  { name: "Client 6", placeholder: true }
+];
+
+export const whyBreaksData = {
+  title: "Why Rest Rituals?",
+  subtitle: "Because breaks are essential to employee well-being and performance",
+  benefits: [
     {
-      icon: "monitor",
-      title: "Screen Fatigue",
-      description: "Long meetings & endless screen time lead to physical stress and mental exhaustion"
+      stat: "85%",
+      title: "Experience Less Stress",
+      description: "Taking a pause during the workday keeps employees happy and healthy. Rest rituals are proven to reduce stress and burnout while increasing feelings of well-being."
     },
     {
-      icon: "calendar-x",
-      title: "Scheduling Conflicts",
-      description: "Traditional wellness programs are too long and difficult to fit into busy work schedules"
+      stat: "78%",
+      title: "Boost Their Productivity",
+      description: "Downtime boosts your bottom line. Research shows that breaks restore motivation and increase productivity, making ROI of wellness programs easier to prove."
     },
     {
-      icon: "users",
-      title: "Low Engagement",
-      description: "One-size-fits-all programs fail to resonate with diverse teams and hybrid workforces"
-    },
-    {
-      icon: "trending-down",
-      title: "Burnout Crisis",
-      description: "Back-to-back meetings and hybrid work fatigue are driving unprecedented burnout rates"
+      stat: "92%",
+      title: "Improve Overall Well-being",
+      description: "Rest rituals reduce the negative mental and physical effects of working and sitting for long periods. This includes decision fatigue, injuries, and chronic illnesses."
     }
-  ],
-  stat: "78% of employees report that short wellness breaks during work hours improve productivity and reduce stress"
+  ]
+};
+
+export const whatIsResetRitualData = {
+  title: "What is Reset Ritual?",
+  description: "Reset Ritual is your organization's holistic wellness solution, offering:",
+  features: [
+    "Live and guided wellness sessions with expert instructors",
+    "12-minute rest rituals automatically scheduled in your Outlook or Google calendar",
+    "Holistic content for all abilities and interests—movement, breathwork, meditation",
+    "Engagement tools and quarterly workshops to foster team connection"
+  ]
 };
 
 export const howItWorksData = {
   title: "How It Works",
-  subtitle: "Get started in three simple steps",
   steps: [
     {
-      number: "01",
-      title: "Survey & Program Design",
-      description: "Employees share their wellness priorities through a quick survey. HR reviews insights to design a tailored program that fits your company culture.",
-      icon: "clipboard-list"
+      number: "1",
+      title: "Employees Connect Calendar & Share Preferences",
+      description: "Reset Ritual has something for everyone. Employees choose from 200+ live sessions each week to move, breathe, stretch, or relax. Sessions include yoga, meditation, breathwork, movement, and wellness talks."
     },
     {
-      number: "02",
-      title: "Sessions Scheduled",
-      description: "HR configures session frequency and type. Short 15-minute breaks (live + on-demand) are automatically scheduled into employee calendars—no friction, no hassle.",
-      icon: "calendar-check"
+      number: "2",
+      title: "We Schedule 12-Minute Rituals That Fit Their Goals",
+      description: "Our smart scheduler arranges breaks without impacting existing commitments or causing guilt. We help remote teams feel connected by recommending sessions their colleagues are joining—all without compromising productivity."
     },
     {
-      number: "03",
-      title: "Engage & Report",
-      description: "Employees join live sessions or access on-demand content at their convenience. HR receives quarterly engagement reports with actionable insights to measure ROI.",
-      icon: "bar-chart-3"
+      number: "3",
+      title: "They Attend, Feel Better & Your Company Benefits",
+      description: "12-minute rest rituals fit seamlessly into calendars, driving high participation. Employees become happier, healthier, and more productive—better equipped to excel in their work."
     }
-  ]
-};
-
-export const featuresData = {
-  title: "Features That Matter",
-  subtitle: "Everything you need to create a thriving workplace wellness culture",
-  features: [
-    {
-      icon: "video",
-      title: "Live 15-Minute Breaks",
-      description: "Expert-led sessions in movement, breathwork, and mental reset techniques—designed to fit seamlessly into the workday",
-      badge: "Popular"
-    },
-    {
-      icon: "library",
-      title: "On-Demand Library",
-      description: "Access a growing library of wellness content anytime, giving employees flexibility and convenience"
-    },
-    {
-      icon: "building",
-      title: "On-Site Workshops",
-      description: "Quarterly in-person workshops to strengthen culture and community through shared wellness experiences"
-    },
-    {
-      icon: "calendar",
-      title: "Calendar Integration",
-      description: "Seamless integration with Outlook, Google Calendar, and Microsoft Teams—wellness breaks appear automatically",
-      badge: "New"
-    },
-    {
-      icon: "award",
-      title: "Rewards & Recognition",
-      description: "Gamification and recognition features that drive consistent participation and celebrate wellness milestones"
-    },
-    {
-      icon: "line-chart",
-      title: "Engagement Analytics",
-      description: "Comprehensive dashboards with participation rates, popular sessions, and ROI metrics for data-driven HR decisions"
-    }
-  ]
+  ],
+  highlight: "We tested various break lengths. Our 12-minute rituals received 65% higher attendance than traditional hour-long wellness sessions."
 };
 
 export const programsData = {
-  title: "Our Programs",
-  subtitle: "Complete engagement rhythm combining daily support with quarterly community building",
-  programs: [
-    {
-      title: "Daily Reset Breaks",
-      subtitle: "15-Minute Live Sessions",
-      description: "Short, guided sessions scheduled during work hours that employees can join from anywhere",
-      image: "https://images.unsplash.com/photo-1674505520294-640e2382f525?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZGl0YXRpb258ZW58MHx8fHwxNzY5MTY1NzM1fDA&ixlib=rb-4.1.0&q=85",
-      features: [
-        "Movement & Stretching",
-        "Breathwork & Meditation",
-        "Energy Boosters",
-        "Stress Management"
-      ],
-      cta: "Learn More"
-    },
-    {
-      title: "Quarterly Workshops",
-      subtitle: "In-Office Community Building",
-      description: "Immersive quarterly experiences that bring teams together for deeper wellness engagement",
-      image: "https://images.pexels.com/photos/3822724/pexels-photo-3822724.jpeg",
-      features: [
-        "Yoga + Zumba Sessions",
-        "Yoga + Nutrition Workshops",
-        "Yoga + Social Wellness Events",
-        "Custom Program Options"
-      ],
-      cta: "Explore Workshops"
-    }
-  ]
+  title: "Complete Wellness Rhythm",
+  subtitle: "Daily support + quarterly community building",
+  daily: {
+    title: "Daily Rest Rituals",
+    subtitle: "12-Minute Live & Guided Sessions",
+    description: "Short, expert-led sessions scheduled during work hours that employees can join from anywhere—office or home.",
+    categories: [
+      { name: "Movement & Stretching", icon: "activity" },
+      { name: "Breathwork & Meditation", icon: "wind" },
+      { name: "Energy Boosters", icon: "zap" },
+      { name: "Mindfulness Practices", icon: "heart" }
+    ]
+  },
+  quarterly: {
+    title: "Quarterly Workshops",
+    subtitle: "On-Site Community Building",
+    description: "Immersive quarterly experiences that bring teams together for deeper wellness engagement and connection.",
+    options: [
+      "Yoga + Zumba Sessions",
+      "Yoga + Nutrition Workshops",
+      "Yoga + Social Wellness Events",
+      "Custom Program Design"
+    ]
+  }
 };
 
-export const impactData = {
-  title: "Measurable Impact",
-  subtitle: "Real outcomes for HR teams and employees",
-  benefits: [
-    {
-      category: "For HR Teams",
-      items: [
-        "Higher engagement & program participation rates",
-        "Measurable ROI with quarterly analytics reports",
-        "Easy implementation with minimal admin overhead",
-        "Improved employee retention and satisfaction scores"
-      ]
-    },
-    {
-      category: "For Employees",
-      items: [
-        "Lower stress levels and improved mental wellbeing",
-        "Better focus and increased productivity",
-        "More connected and collaborative teams",
-        "Reduced physical discomfort from desk work"
-      ]
-    }
-  ],
-  stats: [
-    { number: "87%", label: "Employee Satisfaction" },
-    { number: "15min", label: "Session Duration" },
-    { number: "3x", label: "Higher Engagement" },
-    { number: "92%", label: "Completion Rate" }
+export const integrationData = {
+  title: "Seamless Calendar Integration",
+  description: "Rest rituals appear automatically in your team's calendars—no manual scheduling, no friction, no hassle.",
+  platforms: [
+    { name: "Google Calendar", supported: true },
+    { name: "Outlook", supported: true },
+    { name: "Microsoft Teams", supported: true }
   ]
 };
 
 export const audienceData = {
-  title: "Who It's For",
-  subtitle: "Perfect for modern workplaces committed to employee wellbeing",
+  title: "Who Is This For?",
   audiences: [
     {
-      icon: "briefcase",
-      title: "HR & People Teams",
-      description: "Looking for wellness solutions that employees actually use and that deliver measurable business impact"
+      title: "HR & People Leaders",
+      description: "Looking for wellness solutions that employees actually use and that deliver measurable business impact with minimal admin overhead."
     },
     {
-      icon: "home",
-      title: "Hybrid & On-Site Workforces",
-      description: "Need flexible wellness options that work for distributed teams and in-office employees alike"
+      title: "Hybrid & Remote Teams",
+      description: "Need flexible wellness options that work for distributed teams and create moments of connection across locations."
     },
     {
-      icon: "building-2",
       title: "Mid-to-Large Organizations",
-      description: "Companies with 100+ employees seeking scalable wellness programs with enterprise features"
+      description: "Companies with 100+ employees seeking scalable, data-driven wellness programs with proven engagement rates."
     }
   ]
 };
 
-export const socialProofData = {
-  title: "Trusted by Leading Organizations",
-  subtitle: "Join companies transforming workplace wellness",
-  testimonials: [
-    {
-      quote: "Reset Ritual has transformed how our team approaches wellness. The 15-minute format is perfect for our busy schedules.",
-      author: "Sarah Chen",
-      role: "Head of People Operations",
-      company: "Tech Company"
-    },
-    {
-      quote: "Our employee engagement scores increased significantly after implementing Reset Ritual. The calendar integration makes participation effortless.",
-      author: "Michael Rodriguez",
-      role: "HR Director",
-      company: "Manufacturing Firm"
-    },
-    {
-      quote: "Finally, a wellness program that our hybrid team actually uses. The quarterly workshops have been incredible for team bonding.",
-      author: "Priya Sharma",
-      role: "Chief People Officer",
-      company: "Global Enterprise"
-    }
-  ],
-  logos: [
-    { name: "Midea", placeholder: true },
-    { name: "Carrier", placeholder: true },
-    { name: "Shiprocket", placeholder: true },
-    { name: "Client 4", placeholder: true },
-    { name: "Client 5", placeholder: true },
-    { name: "Client 6", placeholder: true }
-  ]
-};
+export const testimonialsData = [
+  {
+    quote: "We've been working with Reset Ritual for over 2 years. The 12-minute format is perfect—employees actually participate because it doesn't disrupt their workflow.",
+    author: "Priya Sharma",
+    role: "VP of People Operations",
+    company: "Tech Company"
+  },
+  {
+    quote: "Our employee engagement scores increased 35% after implementing Reset Ritual. The calendar integration makes participation effortless, and the quarterly workshops have been incredible.",
+    author: "Michael Chen",
+    role: "Director of HR",
+    company: "Manufacturing Firm"
+  },
+  {
+    quote: "Finally, a wellness program our team uses consistently. The live sessions create real moments of connection, even for our fully remote workforce.",
+    author: "Sarah Rodriguez",
+    role: "Chief People Officer",
+    company: "Global Enterprise"
+  }
+];
 
 export const ctaData = {
   title: "Ready to Transform Workplace Wellness?",
-  subtitle: "See how Reset Ritual can fit into your organization's workday",
+  subtitle: "Join the movement to truly prioritize employee well-being",
   primaryCta: "Get a Demo",
-  secondaryCta: "Talk to HR Specialist"
+  secondaryCta: "Learn More"
 };
 
 export const contactFormFields = [
