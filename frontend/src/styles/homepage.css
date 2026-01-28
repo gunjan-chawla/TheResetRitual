@@ -1028,8 +1028,15 @@ body {
   
   .stats-grid,
   .features-grid,
-  .workshops-grid,
+  .workshops-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps-horizontal-grid {
     grid-template-columns: 1fr;
   }
   
