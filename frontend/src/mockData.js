@@ -8,7 +8,7 @@ export const navigation = {
     { label: "Resources", href: "#resources" },
     { label: "Pricing", href: "#pricing" }
   ],
-  cta: "Book a Demo"
+  cta: "Book a Ritual"
 };
 
 export const heroData = {
