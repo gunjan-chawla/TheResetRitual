@@ -1268,8 +1268,11 @@ body {
   }
   
   .stats-grid,
-  .features-grid,
   .workshops-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
     grid-template-columns: 1fr;
   }
   
