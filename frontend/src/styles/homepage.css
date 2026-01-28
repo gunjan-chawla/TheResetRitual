@@ -577,6 +577,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   margin-top: 3rem;
+  align-items: start;
 }
 
 /* Employee Barriers - Left Column */
@@ -584,6 +585,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 35px;
+  height: 100%;
+}
+
+.organizational-hurdles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
 }
 
 .column-header {
@@ -632,6 +641,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  flex: 1;
 }
 
 .barrier-percentage {
@@ -666,19 +676,16 @@ body {
 }
 
 /* Organizational Hurdles - Right Column */
-.organizational-hurdles {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 .hurdle-card {
   background: #f0fdfa;
   border-left: 6px solid #0d9488;
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .hurdle-card:hover {
@@ -712,6 +719,7 @@ body {
   color: #64748b;
   line-height: 1.6;
   margin: 0;
+  flex: 1;
 }
 
 .challenges-citation {
