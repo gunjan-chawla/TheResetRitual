@@ -190,21 +190,55 @@ const HomePage = () => {
           </div>
 
           {/* Challenges */}
-          <div className="section-header" style={{ marginTop: '5rem' }}>
-            <h2 className="section-title">{problemData.challenges.title}</h2>
-          </div>
-          <div className="challenges-grid">
-            {problemData.challenges.items.map((challenge, index) => {
-              const IconComponent = iconMap[challenge.icon];
-              return (
-                <div key={index} className="challenge-card">
-                  {IconComponent && <IconComponent size={24} className="challenge-icon" />}
-                  <div className="challenge-title">{challenge.title}</div>
-                  <div className="stat-description">{challenge.description}</div>
+          <section className="challenges-section">
+            <div className="challenges-container">
+              <div className="challenges-header">
+                <div className="challenges-overline">{problemData.challenges.overline}</div>
+                <h2 className="challenges-title">{problemData.challenges.title}</h2>
+              </div>
+              
+              <div className="challenges-grid">
+                {/* Employee Barriers */}
+                <div className="employee-barriers">
+                  <div className="column-header blue">
+                    <Users size={24} className="column-header-icon blue" />
+                    <h3 className="column-header-title blue">{problemData.challenges.employeeBarriers.title}</h3>
+                  </div>
+                  {problemData.challenges.employeeBarriers.items.map((item, index) => (
+                    <div key={index} className="barrier-item">
+                      <div className="barrier-percentage">{item.percentage}</div>
+                      <div className="barrier-content">
+                        <div className="barrier-title">{item.title}</div>
+                        <p className="barrier-description">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Organizational Hurdles */}
+                <div className="organizational-hurdles">
+                  <div className="column-header teal">
+                    <Building size={24} className="column-header-icon teal" />
+                    <h3 className="column-header-title teal">{problemData.challenges.organizationalHurdles.title}</h3>
+                  </div>
+                  {problemData.challenges.organizationalHurdles.items.map((hurdle, index) => {
+                    const IconComponent = iconMap[hurdle.icon];
+                    return (
+                      <div key={index} className="hurdle-card">
+                        <div className="hurdle-icon-badge">
+                          {IconComponent && <IconComponent size={24} />}
+                        </div>
+                        <div className="hurdle-title">{hurdle.title}</div>
+                        <p className="hurdle-description">{hurdle.description}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              
+              <div className="challenges-citation">{problemData.challenges.citation}</div>
+            </div>
+          </section>
         </div>
       </section>
 
