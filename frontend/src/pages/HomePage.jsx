@@ -236,15 +236,17 @@ const HomePage = () => {
             <p className="section-subtitle">{solutionData.howItWorks.subtitle}</p>
           </div>
           <div className="steps-timeline">
-            {solutionData.howItWorks.steps.map((step, index) => (
-              <div key={index} className="step-item">
-                <div className="step-number">{step.number}</div>
-                <div className="step-content">
-                  <div className="step-title">{step.title}</div>
-                  <div className="stat-description">{step.description}</div>
+            <div className="steps-horizontal-grid">
+              {solutionData.howItWorks.steps.map((step, index) => (
+                <div key={index} className="step-item">
+                  <div className="step-number">{step.number}</div>
+                  <div className="step-content">
+                    <div className="step-title">{step.title}</div>
+                    <div className="step-description">{step.description}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
