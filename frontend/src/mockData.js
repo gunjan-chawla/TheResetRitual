@@ -5,8 +5,7 @@ export const navigation = {
   menuItems: [
     { label: "Methodology", href: "#methodology" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Resources", href: "#resources" },
-    { label: "Pricing", href: "#pricing" }
+    { label: "Resources", href: "#resources" }
   ],
   cta: "Book a Ritual"
 };
