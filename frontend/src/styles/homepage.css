@@ -1168,22 +1168,289 @@ body {
   }
 }
 
-/* HR Dashboard Mockup */
-.dashboard-mockup {
+/* Employee Impact Section */
+.employee-impact-section {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.employee-impact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.employee-impact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.employee-impact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.employee-impact-hero-statement {
+  font-size: 20px;
+  font-weight: 500;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Benefits Grid */
+.employee-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin: 4rem auto;
+  max-width: 1100px;
+}
+
+.employee-benefit-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.employee-benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--benefit-color);
+  opacity: 0.8;
+}
+
+.employee-benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: var(--benefit-color);
+}
+
+.employee-benefit-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: var(--benefit-color);
+  opacity: 0.9;
+}
+
+.employee-benefit-icon {
+  color: white;
+}
+
+.employee-benefit-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.employee-benefit-description {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Testimonial Section */
+.employee-testimonial-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 900px;
+  margin: 4rem auto 3rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.testimonial-quote-large {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  color: #1e293b;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.testimonial-quote-large::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 60px;
+  color: var(--olive-primary);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.star-icon {
+  color: #fbbf24;
+}
+
+.testimonial-author-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--olive-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.testimonial-author-text {
+  flex: 1;
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author-role {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* CTA Section */
+.employee-impact-ctas {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
+/* Before/After Visual */
+.employee-impact-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.visual-state {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.visual-state.before {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+}
+
+.visual-state.after {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+}
+
+.visual-state-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #64748b;
+}
+
+.visual-state-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.visual-state.before .visual-state-title {
+  color: #991b1b;
+}
+
+.visual-state.after .visual-state-title {
+  color: #065f46;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .employee-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .employee-impact-visual {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-impact-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .employee-impact-title {
+    font-size: 32px;
+  }
+  
+  .employee-impact-hero-statement {
+    font-size: 18px;
+  }
+  
+  .employee-benefit-card {
+    padding: 2rem;
+  }
+  
+  .employee-testimonial-section {
+    padding: 2rem;
+  }
+  
+  .testimonial-quote-large {
+    font-size: 22px;
+  }
+  
+  .employee-impact-ctas {
+    flex-direction: column;
+  }
+  
+  .employee-impact-ctas .btn {
+    width: 100%;
+  }
 }
 
 .kpi-grid {
