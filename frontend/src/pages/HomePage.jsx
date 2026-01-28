@@ -359,31 +359,34 @@ const HomePage = () => {
           </div>
           
           <div className="comparison-grid-modern">
-            {/* Traditional Wellness Column */}
+            {/* Standard Wellness Column */}
             <div className="comparison-column-modern">
-              <div className="comparison-column-header-modern traditional">
-                <h3 className="comparison-column-title-modern traditional">Traditional Wellness</h3>
+              <div className="comparison-column-header-modern standard">
+                <h3 className="comparison-column-title-modern standard">Standard Wellness</h3>
+                <p className="comparison-column-subtitle standard">Established Approach</p>
               </div>
               {comparisonData.metrics.map((metric, index) => (
-                <div key={index} className="comparison-metric-card traditional">
+                <div key={index} className="comparison-metric-card standard">
                   <div className="comparison-metric-category">{metric.category}</div>
-                  <div className="comparison-metric-value traditional">{metric.traditional}</div>
+                  <div className="comparison-metric-value standard">{metric.standard}</div>
                 </div>
               ))}
             </div>
 
-            {/* Reset Ritual Column */}
+            {/* Modern Reset Ritual Column */}
             <div className="comparison-column-modern">
-              <div className="comparison-column-header-modern reset-ritual">
-                <h3 className="comparison-column-title-modern reset-ritual">Reset Ritual</h3>
+              <div className="comparison-column-header-modern modern">
+                <span className="recommended-badge">Recommended</span>
+                <h3 className="comparison-column-title-modern modern">Reset Ritual</h3>
+                <p className="comparison-column-subtitle modern">Modern Innovation</p>
               </div>
               {comparisonData.metrics.map((metric, index) => (
-                <div key={index} className={`comparison-metric-card reset-ritual ${metric.highlight ? 'highlight' : ''}`}>
+                <div key={index} className={`comparison-metric-card modern ${metric.recommended ? 'recommended' : ''}`}>
                   <div className="comparison-metric-category">{metric.category}</div>
-                  <div className={`comparison-metric-value reset-ritual ${metric.highlight ? 'highlight' : ''}`}>
-                    {metric.resetRitual}
+                  <div className={`comparison-metric-value modern ${metric.recommended ? 'recommended' : ''}`}>
+                    {metric.modern}
                   </div>
-                  {metric.highlight && <span className="highlight-badge">Key Feature</span>}
+                  {metric.recommended && <span className="feature-badge">Key Innovation</span>}
                 </div>
               ))}
             </div>
