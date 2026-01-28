@@ -88,15 +88,53 @@ export const problemData = {
     ]
   },
   challenges: {
-    title: "Current Wellness Challenges",
-    items: [
-      { icon: "trending-down", title: "37% participation rate", description: "Low employee engagement" },
-      { icon: "clock", title: "40% cite time barriers", description: "Too long, inconvenient" },
-      { icon: "users", title: "80% want personalization", description: "One-size-fits-all fails" },
-      { icon: "settings", title: "Operational complexity", description: "Hard to manage & scale" },
-      { icon: "bar-chart", title: "Lack of ROI measurement", description: "No data, no proof" },
-      { icon: "repeat", title: "Sustainability issues", description: "Initial buzz fades fast" }
-    ]
+    overline: "Consolidated Research",
+    title: "Key Workplace Wellness Challenges",
+    citation: "Source: Consolidated Workplace Wellness Research 2024-2025",
+    employeeBarriers: {
+      title: "Employee Barriers",
+      icon: "users",
+      color: "blue",
+      items: [
+        {
+          percentage: "37%",
+          title: "LOW PARTICIPATION",
+          description: "Participation is low despite availability. Most employees don't engage regularly."
+        },
+        {
+          percentage: "40%",
+          title: "TIME BARRIER",
+          description: "Employees cite lack of time or availability as the biggest reason for not taking part."
+        },
+        {
+          percentage: "80%",
+          title: "PERSONALIZATION",
+          description: "Employees believe initiatives should be personalized, not 'one-size-fits-all'."
+        }
+      ]
+    },
+    organizationalHurdles: {
+      title: "Organizational Hurdles",
+      icon: "building",
+      color: "teal",
+      items: [
+        {
+          icon: "settings",
+          title: "OPERATIONAL COMPLEXITY",
+          description: "Multiple vendors, tools, and formats make wellness difficult to manage and sustain for HR."
+        },
+        {
+          icon: "pie-chart",
+          title: "LACK OF MEASURABLE ROI",
+          description: "HR is expected to justify spend without clear engagement or impact data."
+        },
+        {
+          icon: "repeat",
+          title: "SUSTAINING MOMENTUM",
+          description: "One-time initiatives fail to build long-term habits or cultural change."
+        }
+      ]
+    }
   }
 };
 
