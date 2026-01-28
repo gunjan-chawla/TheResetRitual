@@ -918,69 +918,192 @@ body {
   line-height: 1.6;
 }
 
-/* Comparison Table */
-.comparison-table {
-  background: white;
-  border-radius: 20px;
+/* Comparison Section - Modern SaaS Design */
+.comparison-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 6rem 3rem;
+  position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  margin-top: 3rem;
 }
 
-.comparison-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--bg-cream);
-  padding: 2rem;
-  gap: 2rem;
+.comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.comparison-column-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
+.comparison-section-header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-.comparison-column-title.traditional {
-  color: var(--text-muted);
+.comparison-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
 }
 
-.comparison-column-title.reset-ritual {
-  color: var(--olive-primary);
+.comparison-section-subtitle {
+  font-size: 18px;
+  color: #64748b;
 }
 
-.comparison-row {
+/* Comparison Grid */
+.comparison-grid-modern {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--border-subtle);
-  transition: background 0.2s ease;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.comparison-row:hover {
-  background: var(--bg-cream);
-}
-
-.comparison-cell {
+/* Column Headers */
+.comparison-column-modern {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.comparison-cell.traditional {
-  color: var(--text-secondary);
+.comparison-column-header-modern {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.comparison-cell.reset-ritual {
-  color: var(--text-primary);
-  font-weight: 500;
+.comparison-column-header-modern.traditional {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border: 1px solid #fca5a5;
 }
 
-.check-icon {
-  color: var(--olive-primary);
-  flex-shrink: 0;
+.comparison-column-header-modern.reset-ritual {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid #60a5fa;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.comparison-column-title-modern {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.comparison-column-title-modern.traditional {
+  color: #991b1b;
+  opacity: 0.8;
+}
+
+.comparison-column-title-modern.reset-ritual {
+  color: #1e40af;
+}
+
+/* Metric Cards */
+.comparison-metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.comparison-metric-card.traditional {
+  opacity: 0.7;
+  border-color: #e5e7eb;
+}
+
+.comparison-metric-card.traditional:hover {
+  opacity: 0.85;
+}
+
+.comparison-metric-card.reset-ritual {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+  font-weight: 600;
+}
+
+.comparison-metric-card.reset-ritual:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+}
+
+.comparison-metric-card.reset-ritual.highlight {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #2563eb;
+  border-width: 2px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+}
+
+.comparison-metric-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #64748b;
+}
+
+.comparison-metric-value {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.comparison-metric-value.traditional {
+  color: #6b7280;
+}
+
+.comparison-metric-value.reset-ritual {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.comparison-metric-value.reset-ritual.highlight {
+  color: #1e40af;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Highlight Badge */
+.highlight-badge {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .comparison-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .comparison-section-title {
+    font-size: 32px;
+  }
+  
+  .comparison-column-modern {
+    gap: 0.75rem;
+  }
+  
+  .comparison-metric-card {
+    min-height: 80px;
+  }
 }
 
 /* HR Dashboard Mockup */
