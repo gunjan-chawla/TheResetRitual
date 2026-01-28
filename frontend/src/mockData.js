@@ -276,17 +276,43 @@ export const impactData = {
     ]
   },
   employeeImpact: {
-    title: "Employee Impact",
-    outcomes: [
-      { icon: "zap", title: "Reduced stress & stiffness", description: "Physical relief in minutes" },
-      { icon: "target", title: "Better focus & energy", description: "Cognitive boost throughout day" },
-      { icon: "brain", title: "Stronger mind-body awareness", description: "Increased self-care habits" },
-      { icon: "users", title: "Sense of shared pause", description: "Team connection & culture" }
+    title: "Impact for Employees",
+    heroStatement: "Immediate physical and mental shifts reported by participants after sessions.",
+    benefits: [
+      { 
+        icon: "user-check", 
+        title: "Reduced Stress & Stiffness", 
+        description: "Physical release of tension in neck and shoulders.",
+        color: "#10b981" // Calming green
+      },
+      { 
+        icon: "zap", 
+        title: "Better Focus & Energy", 
+        description: "Mental clarity boost to overcome the afternoon slump.",
+        color: "#f59e0b" // Energizing orange
+      },
+      { 
+        icon: "brain", 
+        title: "Mind-Body Awareness", 
+        description: "Stronger connection to physical needs and signals.",
+        color: "#8b5cf6" // Balanced purple
+      },
+      { 
+        icon: "users", 
+        title: "Sense of Shared Pause", 
+        description: "Collective reset moment that normalizes rest at work.",
+        color: "#ec4899" // Warm pink
+      }
     ],
     testimonial: {
       quote: "I came back clearer in just 12 minutes.",
-      author: "Product Manager, Tech Startup"
-    }
+      author: "Product Manager, Tech Startup",
+      rating: 5
+    },
+    ctas: [
+      { label: "Experience Your Own Reset", type: "primary" },
+      { label: "Bring Reset Rituals to Your Team", type: "secondary" }
+    ]
   },
   organizationalBenefits: {
     title: "Organizational Benefits",
