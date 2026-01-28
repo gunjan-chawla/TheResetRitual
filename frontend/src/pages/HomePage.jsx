@@ -421,27 +421,66 @@ const HomePage = () => {
           </div>
 
           {/* Employee Impact */}
-          <div className="section-header" style={{ marginTop: '5rem' }}>
-            <h2 className="section-title">{impactData.employeeImpact.title}</h2>
-          </div>
-          <div className="features-grid">
-            {impactData.employeeImpact.outcomes.map((outcome, index) => {
-              const IconComponent = iconMap[outcome.icon];
-              return (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">
-                    {IconComponent && <IconComponent size={28} />}
-                  </div>
-                  <div className="feature-title">{outcome.title}</div>
-                  <div className="stat-description">{outcome.description}</div>
+          <section className="employee-impact-section">
+            <div className="employee-impact-container">
+              <div className="employee-impact-header">
+                <h2 className="employee-impact-title">{impactData.employeeImpact.title}</h2>
+                <p className="employee-impact-hero-statement">{impactData.employeeImpact.heroStatement}</p>
+              </div>
+
+              {/* Benefits Grid */}
+              <div className="employee-benefits-grid">
+                {impactData.employeeImpact.benefits.map((benefit, index) => {
+                  const IconComponent = iconMap[benefit.icon];
+                  return (
+                    <div 
+                      key={index} 
+                      className="employee-benefit-card"
+                      style={{ '--benefit-color': benefit.color }}
+                    >
+                      <div className="employee-benefit-icon-wrapper" style={{ background: benefit.color }}>
+                        {IconComponent && <IconComponent size={32} className="employee-benefit-icon" />}
+                      </div>
+                      <h3 className="employee-benefit-title">{benefit.title}</h3>
+                      <p className="employee-benefit-description">{benefit.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Testimonial */}
+              <div className="employee-testimonial-section">
+                <div className="testimonial-rating">
+                  {[...Array(impactData.employeeImpact.testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={20} fill="#fbbf24" className="star-icon" />
+                  ))}
                 </div>
-              );
-            })}
-          </div>
-          <div className="roi-quote" style={{ marginTop: '3rem' }}>
-            <p className="roi-quote-text">"{impactData.employeeImpact.testimonial.quote}"</p>
-            <p className="stat-source">— {impactData.employeeImpact.testimonial.author}</p>
-          </div>
+                <p className="testimonial-quote-large">{impactData.employeeImpact.testimonial.quote}</p>
+                <div className="testimonial-author-info">
+                  <div className="testimonial-avatar">
+                    {impactData.employeeImpact.testimonial.author.charAt(0)}
+                  </div>
+                  <div className="testimonial-author-text">
+                    <p className="testimonial-author-name">{impactData.employeeImpact.testimonial.author.split(',')[0]}</p>
+                    <p className="testimonial-author-role">{impactData.employeeImpact.testimonial.author.split(',')[1]}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="employee-impact-ctas">
+                {impactData.employeeImpact.ctas.map((cta, index) => (
+                  <Button
+                    key={index}
+                    onClick={scrollToContact}
+                    className={cta.type === 'primary' ? 'btn btn-primary btn-large' : 'btn btn-outline btn-large'}
+                  >
+                    {cta.label} <ArrowRight size={20} />
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </section>
 
           {/* Organizational Benefits */}
           <div className="section-header" style={{ marginTop: '5rem' }}>
