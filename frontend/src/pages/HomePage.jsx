@@ -1,75 +1,53 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Mail, Phone, MapPin, Activity, Wind, Zap, Heart } from 'lucide-react';
+import {
+  Flame, Brain, DollarSign, AlertTriangle, TrendingDown, Clock, Users, Settings,
+  BarChart, Repeat, Monitor, CheckCircle, Activity, Wind, Coffee, Heart, Smile,
+  UserCheck, Zap, Target, Globe, Award, Sliders, PieChart, Mail, Phone, Linkedin,
+  Check, ArrowRight, Play, Leaf
+} from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { useToast } from '../hooks/use-toast';
 import {
+  navigation,
   heroData,
-  trustLogos,
-  whyBreaksData,
-  whatIsResetRitualData,
-  howItWorksData,
-  programsData,
-  integrationData,
-  audienceData,
-  testimonialsData,
-  ctaData,
-  contactFormFields
+  problemData,
+  solutionData,
+  featuresData,
+  comparisonData,
+  impactData,
+  finalCTAData,
+  footerData
 } from '../mockData';
 
 const iconMap = {
+  flame: Flame,
+  brain: Brain,
+  'dollar-sign': DollarSign,
+  'alert-triangle': AlertTriangle,
+  'trending-down': TrendingDown,
+  clock: Clock,
+  users: Users,
+  settings: Settings,
+  'bar-chart': BarChart,
+  repeat: Repeat,
+  monitor: Monitor,
+  'check-circle': CheckCircle,
   activity: Activity,
   wind: Wind,
+  coffee: Coffee,
+  heart: Heart,
+  smile: Smile,
+  'user-check': UserCheck,
   zap: Zap,
-  heart: Heart
+  target: Target,
+  globe: Globe,
+  award: Award,
+  sliders: Sliders,
+  'pie-chart': PieChart
 };
 
 const HomePage = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    employees: '',
-    phone: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSelectChange = (value) => {
-    setFormData(prev => ({ ...prev, employees: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      toast({
-        title: "Request Received!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        employees: '',
-        phone: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1000);
-  };
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -81,402 +59,417 @@ const HomePage = () => {
       <nav className="nav-header">
         <div className="nav-content">
           <div className="nav-logo">
-            <span className="logo-text">Reset Ritual</span>
+            <div className="nav-logo-icon">
+              <Leaf size={20} />
+            </div>
+            <span className="nav-logo-text">{navigation.logo}</span>
           </div>
-          <div className="nav-links-desktop">
-            <a href="#what" className="nav-link">What We Do</a>
-            <a href="#how-it-works" className="nav-link">How It Works</a>
-            <a href="#programs" className="nav-link">Programs</a>
-            <a href="#testimonials" className="nav-link">Testimonials</a>
+          <div className="nav-menu">
+            {navigation.menuItems.map((item, index) => (
+              <a key={index} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
           </div>
-          <div className="nav-actions">
-            <Button onClick={scrollToContact} className="btn-primary">Get a Demo</Button>
-          </div>
+          <Button onClick={scrollToContact} className="btn btn-outline">
+            {navigation.cta}
+          </Button>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">{heroData.headline}</h1>
-          <p className="hero-subtitle">{heroData.subheading}</p>
-          <div className="hero-stat">{heroData.stat}</div>
-          <div className="hero-cta-group">
-            <Button onClick={scrollToContact} className="btn-primary btn-large">
-              Get a Demo <ArrowRight size={20} />
-            </Button>
-            <Button variant="outline" className="btn-secondary btn-large">
-              Learn More
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Logos */}
-      <section className="trust-section">
-        <div className="container">
-          <p className="trust-title">Trusted by Leading Organizations</p>
-          <div className="logos-grid">
-            {trustLogos.map((logo, index) => (
-              <div key={index} className="logo-card">
-                <div className="logo-placeholder">{logo.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Breaks */}
-      <section className="section-container section-light">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{whyBreaksData.title}</h2>
-            <p className="body-large section-subtitle">{whyBreaksData.subtitle}</p>
-          </div>
-          <div className="benefits-grid">
-            {whyBreaksData.benefits.map((benefit, index) => (
-              <div key={index} className="benefit-card">
-                <div className="benefit-stat">{benefit.stat}</div>
-                <h3 className="benefit-title">{benefit.title}</h3>
-                <p className="benefit-description">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What is Reset Ritual */}
-      <section className="section-container" id="what">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{whatIsResetRitualData.title}</h2>
-            <p className="body-large section-subtitle">{whatIsResetRitualData.description}</p>
-          </div>
-          <div className="features-box">
-            <ul className="features-list">
-              {whatIsResetRitualData.features.map((feature, index) => (
-                <li key={index} className="feature-item">
-                  <Check size={24} className="check-icon" />
-                  <span className="feature-text">{feature}</span>
-                </li>
+        <div className="hero-container">
+          <div className="hero-content">
+            <h1 className="hero-headline">{heroData.headline}</h1>
+            <p className="subheadline">{heroData.subheadline}</p>
+            <div className="hero-trust-indicators">
+              {heroData.trustIndicators.map((indicator, index) => (
+                <div key={index} className="trust-indicator">
+                  <Check size={16} className="trust-icon" />
+                  <span>{indicator}</span>
+                </div>
               ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="section-container section-light" id="how-it-works">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{howItWorksData.title}</h2>
-          </div>
-          <div className="steps-container">
-            {howItWorksData.steps.map((step, index) => (
-              <div key={index} className="step-card">
-                <div className="step-header">
-                  <div className="step-number">{step.number}</div>
-                  <h3 className="step-title">{step.title}</h3>
-                </div>
-                <p className="step-description">{step.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="step-highlight">
-            {howItWorksData.highlight}
-          </div>
-        </div>
-      </section>
-
-      {/* Programs */}
-      <section className="section-container" id="programs">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{programsData.title}</h2>
-            <p className="body-large section-subtitle">{programsData.subtitle}</p>
-          </div>
-          <div className="programs-wrapper">
-            {/* Daily Rituals */}
-            <div className="program-box">
-              <p className="program-subtitle">{programsData.daily.subtitle}</p>
-              <h3 className="program-title">{programsData.daily.title}</h3>
-              <p className="program-description">{programsData.daily.description}</p>
-              <div className="program-categories">
-                {programsData.daily.categories.map((category, index) => {
-                  const IconComponent = iconMap[category.icon];
-                  return (
-                    <div key={index} className="category-item">
-                      {IconComponent && <IconComponent size={20} className="category-icon" />}
-                      <span>{category.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
             </div>
-
-            {/* Quarterly Workshops */}
-            <div className="program-box">
-              <p className="program-subtitle">{programsData.quarterly.subtitle}</p>
-              <h3 className="program-title">{programsData.quarterly.title}</h3>
-              <p className="program-description">{programsData.quarterly.description}</p>
-              <ul className="program-options">
-                {programsData.quarterly.options.map((option, index) => (
-                  <li key={index} className="option-item">
-                    <Check size={20} className="check-icon" />
-                    <span>{option}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Calendar Integration */}
-      <section className="section-container section-accent">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{integrationData.title}</h2>
-            <p className="body-large">{integrationData.description}</p>
-          </div>
-          <div className="integration-showcase">
-            <div className="integration-image-wrapper">
-              <img 
-                src={integrationData.image} 
-                alt="Calendar integration interface" 
-                className="integration-image"
-              />
-            </div>
-            <div className="integration-details">
-              <h3 className="heading-3">Automatically Syncs With:</h3>
-              <div className="platforms-list">
-                {integrationData.platforms.map((platform, index) => (
-                  <div key={index} className="platform-badge">
-                    <Check size={20} className="check-icon" />
-                    {platform.name}
-                  </div>
-                ))}
-              </div>
-              <div className="integration-features">
-                <div className="integration-feature">
-                  <Check size={20} className="check-icon" />
-                  <span>Zero manual scheduling required</span>
-                </div>
-                <div className="integration-feature">
-                  <Check size={20} className="check-icon" />
-                  <span>Smart scheduling around existing meetings</span>
-                </div>
-                <div className="integration-feature">
-                  <Check size={20} className="check-icon" />
-                  <span>One-click join from calendar invite</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who It's For */}
-      <section className="section-container">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">{audienceData.title}</h2>
-          </div>
-          <div className="audience-grid">
-            {audienceData.audiences.map((audience, index) => (
-              <div key={index} className="audience-card">
-                <h3 className="audience-title">{audience.title}</h3>
-                <p className="audience-description">{audience.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-container section-light" id="testimonials">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-2">What Our Customers Are Saying</h2>
-          </div>
-          <div className="testimonials-container">
-            {testimonialsData.map((testimonial, index) => (
-              <Card key={index} className="testimonial-card">
-                <CardContent>
-                  <p className="testimonial-quote">"{testimonial.quote}"</p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div className="author-info">
-                      <p className="author-name">{testimonial.author}</p>
-                      <p className="author-role">{testimonial.role}</p>
-                      <p className="author-company">{testimonial.company}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="section-container section-cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="heading-2">{ctaData.title}</h2>
-            <p className="body-large">{ctaData.subtitle}</p>
-            <div className="cta-buttons">
-              <Button onClick={scrollToContact} className="btn-primary btn-large">
-                {ctaData.primaryCta} <ArrowRight size={20} />
+            <div className="hero-cta-group">
+              <Button onClick={scrollToContact} className="btn btn-primary btn-large">
+                {heroData.primaryCTA} <ArrowRight size={20} />
               </Button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Contact Form */}
-      <section className="section-container section-light" id="contact">
-        <div className="container">
-          <div className="contact-wrapper">
-            <div className="contact-info">
-              <h2 className="heading-2">Get in Touch</h2>
-              <p className="body-large">Ready to see Reset Ritual in action? Fill out the form and we'll be in touch within 24 hours.</p>
-              <div className="contact-details">
-                <div className="contact-item">
-                  <Mail className="contact-icon" size={20} />
-                  <span className="body-medium">hello@resetritual.com</span>
+          {/* Calendar Mockup */}
+          <div className="calendar-mockup">
+            <div className="calendar-header">
+              <span className="calendar-title">This Week's Rituals</span>
+            </div>
+            <div className="calendar-grid">
+              <div className="calendar-day">Mon</div>
+              <div className="calendar-day">Tue</div>
+              <div className="calendar-day">Wed</div>
+              <div className="calendar-day">Thu</div>
+              <div className="calendar-day">Fri</div>
+              
+              <div>
+                <div className="session-card">
+                  <div className="session-time">10:00 AM</div>
+                  <div className="session-title">Desk Stretch</div>
                 </div>
-                <div className="contact-item">
-                  <Phone className="contact-icon" size={20} />
-                  <span className="body-medium">+1 (555) 123-4567</span>
+              </div>
+              <div>
+                <div className="session-card breathwork">
+                  <div className="session-time">2:30 PM</div>
+                  <div className="session-title">Breathwork</div>
                 </div>
-                <div className="contact-item">
-                  <MapPin className="contact-icon" size={20} />
-                  <span className="body-medium">San Francisco, CA</span>
+              </div>
+              <div>
+                <div className="session-card movement">
+                  <div className="session-time">11:15 AM</div>
+                  <div className="session-title">Focus Flow</div>
+                </div>
+              </div>
+              <div>
+                <div className="session-card">
+                  <div className="session-time">3:00 PM</div>
+                  <div className="session-title">Energy Boost</div>
+                </div>
+              </div>
+              <div>
+                <div className="session-card breathwork">
+                  <div className="session-time">10:30 AM</div>
+                  <div className="session-title">Meditation</div>
                 </div>
               </div>
             </div>
-            <Card className="contact-form-card">
-              <CardContent className="contact-form-content">
-                <form onSubmit={handleSubmit} className="contact-form">
-                  <div className="form-group">
-                    <label htmlFor="name" className="form-label">Full Name *</label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                    />
+            <div className="up-next-card">
+              <div className="up-next-label">Up Next</div>
+              <div className="up-next-title">Desk Stretch - 12 min</div>
+              <div className="play-button">
+                <Play size={18} fill="white" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="section" id="methodology">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">{problemData.title}</h2>
+          </div>
+          <div className="stats-grid">
+            {problemData.stats.map((stat, index) => {
+              const IconComponent = iconMap[stat.icon];
+              return (
+                <div key={index} className="stat-card">
+                  <div className="stat-icon">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="email" className="form-label">Work Email *</label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                    />
+                  <div className="stat-number">{stat.stat}</div>
+                  <div className="stat-title">{stat.title}</div>
+                  <div className="stat-description">{stat.description}</div>
+                  <div className="stat-source">Source: {stat.source}</div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* India Stats */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{problemData.indiaStats.title}</h2>
+          </div>
+          <div className="india-stats-grid">
+            {problemData.indiaStats.stats.map((stat, index) => (
+              <div key={index} className="india-stat-card">
+                <div className="india-stat-number">{stat.stat}</div>
+                <div className="stat-description">{stat.description}</div>
+                <div className="stat-source">— {stat.source}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Challenges */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{problemData.challenges.title}</h2>
+          </div>
+          <div className="challenges-grid">
+            {problemData.challenges.items.map((challenge, index) => {
+              const IconComponent = iconMap[challenge.icon];
+              return (
+                <div key={index} className="challenge-card">
+                  {IconComponent && <IconComponent size={24} className="challenge-icon" />}
+                  <div className="challenge-title">{challenge.title}</div>
+                  <div className="stat-description">{challenge.description}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="section section-alt" id="solutions">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">{solutionData.title}</h2>
+            <p className="section-subtitle">{solutionData.subtitle}</p>
+          </div>
+          <div className="features-grid">
+            {solutionData.features.map((feature, index) => {
+              const IconComponent = iconMap[feature.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="company" className="form-label">Company Name *</label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                    />
+                  <div className="feature-title">{feature.title}</div>
+                  <div className="stat-description">{feature.description}</div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* How It Works */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{solutionData.howItWorks.title}</h2>
+            <p className="section-subtitle">{solutionData.howItWorks.subtitle}</p>
+          </div>
+          <div className="steps-timeline">
+            {solutionData.howItWorks.steps.map((step, index) => (
+              <div key={index} className="step-item">
+                <div className="step-number">{step.number}</div>
+                <div className="step-content">
+                  <div className="step-title">{step.title}</div>
+                  <div className="stat-description">{step.description}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features - Live Rituals */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">{featuresData.liveRituals.title}</h2>
+            <p className="section-subtitle">{featuresData.liveRituals.tagline}</p>
+          </div>
+          <div className="features-grid">
+            {featuresData.liveRituals.modules.map((module, index) => {
+              const IconComponent = iconMap[module.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="employees" className="form-label">Number of Employees *</label>
-                    <Select onValueChange={handleSelectChange} value={formData.employees}>
-                      <SelectTrigger className="form-input">
-                        <SelectValue placeholder="Select range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="50-100">50-100</SelectItem>
-                        <SelectItem value="100-500">100-500</SelectItem>
-                        <SelectItem value="500-1000">500-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
-                      </SelectContent>
-                    </Select>
+                  <div className="feature-title">{module.title}</div>
+                  <div className="stat-description">{module.description}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Workshops */}
+      <section className="section section-accent">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">{featuresData.workshops.title}</h2>
+            <p className="section-subtitle">{featuresData.workshops.subtitle}</p>
+          </div>
+          <div className="workshops-grid">
+            {featuresData.workshops.items.map((workshop, index) => (
+              <div key={index} className="workshop-card">
+                <div className="workshop-header">
+                  <div className="workshop-subtitle">{workshop.subtitle}</div>
+                  <div className="workshop-title">{workshop.title}</div>
+                </div>
+                <div className="workshop-body">
+                  <p className="stat-description">{workshop.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Power of Both */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{featuresData.powerOfBoth.title}</h2>
+          </div>
+          <div className="power-of-both">
+            <div className="power-card">
+              <h3 className="feature-title">{featuresData.powerOfBoth.daily.title}</h3>
+              <p className="stat-description">{featuresData.powerOfBoth.daily.description}</p>
+            </div>
+            <div className="power-card">
+              <h3 className="feature-title">{featuresData.powerOfBoth.quarterly.title}</h3>
+              <p className="stat-description">{featuresData.powerOfBoth.quarterly.description}</p>
+            </div>
+            <div className="synthesis-banner">
+              {featuresData.powerOfBoth.synthesis}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">{comparisonData.title}</h2>
+            <p className="section-subtitle">{comparisonData.subtitle}</p>
+          </div>
+          <div className="comparison-table">
+            <div className="comparison-header">
+              <div className="comparison-column-title traditional">Traditional Wellness</div>
+              <div className="comparison-column-title reset-ritual">Reset Ritual</div>
+            </div>
+            {comparisonData.items.map((item, index) => (
+              <div key={index} className="comparison-row">
+                <div className="comparison-cell traditional">{item.traditional}</div>
+                <div className="comparison-cell reset-ritual">
+                  <Check size={20} className="check-icon" />
+                  {item.resetRitual}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & ROI Section */}
+      <section className="section section-alt" id="resources">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Impact & ROI</h2>
+            <p className="section-subtitle">Measurable results that matter to HR and employees</p>
+          </div>
+
+          {/* HR Dashboard */}
+          <div className="dashboard-mockup">
+            <div className="dashboard-header">
+              <h3 className="feature-title">{impactData.hrDashboard.title}</h3>
+              <p className="stat-description">{impactData.hrDashboard.subtitle}</p>
+            </div>
+            <div className="kpi-grid">
+              {impactData.hrDashboard.kpis.map((kpi, index) => (
+                <div key={index} className="kpi-card">
+                  <div className="kpi-title">{kpi.title}</div>
+                  <div className="kpi-value">{kpi.value}</div>
+                  <div className="kpi-trend">
+                    <TrendingDown size={16} style={{ transform: kpi.trend === 'up' ? 'rotate(180deg)' : 'none' }} />
+                    <span>{kpi.trend === 'up' ? 'Increasing' : 'Stable'}</span>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="phone" className="form-label">Phone Number</label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="form-input"
-                    />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Employee Impact */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{impactData.employeeImpact.title}</h2>
+          </div>
+          <div className="features-grid">
+            {impactData.employeeImpact.outcomes.map((outcome, index) => {
+              const IconComponent = iconMap[outcome.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="message" className="form-label">Tell us about your wellness goals</label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="form-input"
-                    />
+                  <div className="feature-title">{outcome.title}</div>
+                  <div className="stat-description">{outcome.description}</div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="roi-quote" style={{ marginTop: '3rem' }}>
+            <p className="roi-quote-text">"{impactData.employeeImpact.testimonial.quote}"</p>
+            <p className="stat-source">— {impactData.employeeImpact.testimonial.author}</p>
+          </div>
+
+          {/* Organizational Benefits */}
+          <div className="section-header" style={{ marginTop: '5rem' }}>
+            <h2 className="section-title">{impactData.organizationalBenefits.title}</h2>
+          </div>
+          <div className="features-grid">
+            {impactData.organizationalBenefits.benefits.map((benefit, index) => {
+              const IconComponent = iconMap[benefit.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <Button type="submit" disabled={isSubmitting} className="btn-primary btn-full btn-large">
-                    {isSubmitting ? 'Sending...' : 'Request Demo'} <ArrowRight size={20} />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                  <div className="feature-title">{benefit.title}</div>
+                  <div className="stat-description">{benefit.description}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Quote */}
+      <section className="section">
+        <div className="container">
+          <div className="roi-quote">
+            <p className="roi-quote-text">"{impactData.roiQuote}"</p>
+            <p className="roi-quote-source">— {impactData.roiSource}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Thought Line */}
+      <section className="thought-line">
+        <p className="thought-line-text">{finalCTAData.thoughtLine}</p>
+      </section>
+
+      {/* Final CTA */}
+      <section className="final-cta" id="contact">
+        <div className="container">
+          <h2 className="section-title">{finalCTAData.title}</h2>
+          <div className="cta-buttons">
+            {finalCTAData.buttons.map((button, index) => (
+              <Button
+                key={index}
+                onClick={scrollToContact}
+                className={button.primary ? 'btn btn-primary btn-large' : 'btn btn-outline btn-large'}
+              >
+                {button.label} {button.primary && <ArrowRight size={20} />}
+              </Button>
+            ))}
+          </div>
+          <div className="contact-info">
+            <div className="contact-item">
+              <Mail size={18} className="contact-icon" />
+              <span>{finalCTAData.contact.email}</span>
+            </div>
+            <div className="contact-item">
+              <Phone size={18} className="contact-icon" />
+              <span>{finalCTAData.contact.phone}</span>
+            </div>
+            <div className="contact-item">
+              <Linkedin size={18} className="contact-icon" />
+              <span>{finalCTAData.contact.linkedin}</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3 className="footer-title">Reset Ritual</h3>
-              <p className="footer-text">12-minute rest rituals for holistic workplace wellness.</p>
-            </div>
-            <div className="footer-column">
-              <h4 className="footer-heading">Product</h4>
-              <ul className="footer-links">
-                <li><a href="#what" className="footer-link">What We Do</a></li>
-                <li><a href="#how-it-works" className="footer-link">How It Works</a></li>
-                <li><a href="#programs" className="footer-link">Programs</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4 className="footer-heading">Company</h4>
-              <ul className="footer-links">
-                <li><a href="#" className="footer-link">About Us</a></li>
-                <li><a href="#testimonials" className="footer-link">Testimonials</a></li>
-                <li><a href="#contact" className="footer-link">Contact</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4 className="footer-heading">Legal</h4>
-              <ul className="footer-links">
-                <li><a href="#" className="footer-link">Privacy Policy</a></li>
-                <li><a href="#" className="footer-link">Terms of Service</a></li>
-              </ul>
-            </div>
+        <div className="footer-content">
+          <div className="footer-nav">
+            {footerData.navigation.map((item, index) => (
+              <a key={index} href={item.href} className="footer-link">
+                {item.label}
+              </a>
+            ))}
           </div>
-          <div className="footer-bottom">
-            <p className="footer-copyright">
-              © 2025 Reset Ritual. All rights reserved.
-            </p>
+          <div className="footer-copyright">
+            © 2025 Reset Rituals. All rights reserved.
           </div>
         </div>
       </footer>
