@@ -228,37 +228,39 @@ export const featuresData = {
 
 export const comparisonData = {
   title: "Why Reset Ritual",
-  subtitle: "A better approach to workplace wellness",
-  items: [
+  subtitle: "The modern standard for workplace wellness",
+  metrics: [
     {
-      traditional: "45-60 min sessions",
-      resetRitual: "12-minute resets",
-      advantage: true
+      category: "Time",
+      traditional: "45-60m Sessions",
+      resetRitual: "12m Micro-rituals",
+      highlight: true
     },
     {
-      traditional: "Fixed schedules",
-      resetRitual: "Hybrid & flexible",
-      advantage: true
+      category: "Flexibility",
+      traditional: "Rigid Schedule",
+      resetRitual: "Hybrid & On-Demand"
     },
     {
-      traditional: "One-size-fits-all",
-      resetRitual: "Choice-led personalization",
-      advantage: true
+      category: "Access",
+      traditional: "App Download Required",
+      resetRitual: "Calendar Integrated",
+      highlight: true
     },
     {
-      traditional: "Passive (watch/listen)",
-      resetRitual: "Actionable, movement-first",
-      advantage: true
+      category: "Type",
+      traditional: "Passive Content",
+      resetRitual: "Actionable Movement"
     },
     {
-      traditional: "App-heavy, low reuse",
-      resetRitual: "Calendar-integrated",
-      advantage: true
+      category: "Personalization",
+      traditional: "One-Size-Fits-All",
+      resetRitual: "Choice-Led Experience"
     },
     {
-      traditional: "Occasional engagement",
-      resetRitual: "Daily habits + quarterly workshops",
-      advantage: true
+      category: "Frequency",
+      traditional: "Occasional Engagement",
+      resetRitual: "Daily Habits + Quarterly Workshops"
     }
   ]
 };
