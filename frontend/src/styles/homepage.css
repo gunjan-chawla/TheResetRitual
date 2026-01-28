@@ -539,36 +539,265 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Challenges Grid - 3x3 Matrix */
+/* Challenges Section - Two Column Comparison */
+.challenges-section {
+  background: white;
+  padding: 50px 30px;
+}
+
+.challenges-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.challenges-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.challenges-overline {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.challenges-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
 .challenges-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   margin-top: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.challenge-card {
-  background: white;
+/* Employee Barriers - Left Column */
+.employee-barriers {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.column-header.blue {
+  border-bottom: 3px solid #2563eb;
+}
+
+.column-header.teal {
+  border-bottom: 3px solid #0d9488;
+}
+
+.column-header-icon {
+  font-size: 24px;
+}
+
+.column-header-icon.blue {
+  color: #2563eb;
+}
+
+.column-header-icon.teal {
+  color: #0d9488;
+}
+
+.column-header-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.column-header-title.blue {
+  color: #2563eb;
+}
+
+.column-header-title.teal {
+  color: #0d9488;
+}
+
+.barrier-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.barrier-percentage {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #2563eb;
+  line-height: 1;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.barrier-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.barrier-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.barrier-description {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Organizational Hurdles - Right Column */
+.organizational-hurdles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hurdle-card {
+  background: #f0fdfa;
+  border-left: 6px solid #0d9488;
   border-radius: 12px;
-  padding: 1.5rem;
-  border-left: 4px solid var(--blush-primary);
-  box-shadow: var(--shadow-soft);
-  text-align: center;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.challenge-icon {
-  color: var(--blush-primary);
-  margin-bottom: 1rem;
+.hurdle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.challenge-title {
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+.hurdle-icon-badge {
+  width: 48px;
+  height: 48px;
+  background: #ccfbf1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d9488;
+  margin-bottom: 16px;
+}
+
+.hurdle-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #115e59;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hurdle-description {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.challenges-citation {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 40px;
+  text-align: left;
+}
+
+/* Background Decorations */
+.challenges-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.challenges-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.challenges-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive Design for Challenges */
+@media (max-width: 1279px) {
+  .challenges-grid {
+    gap: 40px;
+  }
+  
+  .challenges-title {
+    font-size: 36px;
+  }
+  
+  .barrier-percentage {
+    font-size: 48px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .challenges-section {
+    padding: 30px 20px;
+  }
+  
+  .challenges-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .challenges-title {
+    font-size: 28px;
+  }
+  
+  .barrier-percentage {
+    font-size: 56px;
+    min-width: 120px;
+  }
+  
+  .barrier-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .barrier-content {
+    padding-top: 0;
+  }
+  
+  .hurdle-card {
+    padding: 20px;
+  }
 }
 
 /* Features Grid */
