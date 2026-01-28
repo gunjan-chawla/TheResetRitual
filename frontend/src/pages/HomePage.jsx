@@ -3,7 +3,7 @@ import {
   Flame, Brain, DollarSign, AlertTriangle, TrendingDown, Clock, Users, Settings,
   BarChart, Repeat, Monitor, CheckCircle, Activity, Wind, Coffee, Heart, Smile,
   UserCheck, Zap, Target, Globe, Award, Sliders, PieChart, Mail, Phone, Linkedin,
-  Check, ArrowRight, Play, Leaf
+  Check, ArrowRight, Play, Leaf, Building
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useToast } from '../hooks/use-toast';
