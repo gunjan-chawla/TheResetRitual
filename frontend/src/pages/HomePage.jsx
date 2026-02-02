@@ -250,21 +250,21 @@ const HomePage = () => {
             <p className="journey-map-subtitle">{solutionData.subtitle}</p>
           </div>
 
-          {/* Timeline with Real Person Images */}
+          {/* Timeline with Illustrative Images */}
           <div className="journey-timeline-v2">
             {/* Timeline Bar */}
             <div className="timeline-track">
               <div className="timeline-progress"></div>
             </div>
 
-            {/* Journey Moments */}
-            <div className="journey-scenes">
+            {/* Journey Moments - 4 Steps */}
+            <div className="journey-scenes four-items">
               {/* 9:00 AM - Start Day */}
               <div className="journey-scene">
-                <div className="scene-illustration">
+                <div className="scene-illustration square">
                   <img 
-                    src="https://images.unsplash.com/photo-1696453424699-f6ebbe24c28a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG9mZmljZSUyMGRlc2slMjBzdHJldGNoJTIwd2VsbG5lc3N8ZW58MHx8fHwxNzcwMDE4NjE5fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
-                    alt="Woman starting workday at desk" 
+                    src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/841e541d6582d0bb032c5e66b49df1b6824e7a82c32ed0721f0ac07ed378cdba.png" 
+                    alt="Illustration of woman starting workday at desk" 
                     className="scene-image"
                   />
                 </div>
@@ -282,11 +282,11 @@ const HomePage = () => {
 
               {/* 11:45 AM - First Reset */}
               <div className="journey-scene is-reset">
-                <div className="reset-glow"></div>
-                <div className="scene-illustration">
+                <div className="reset-glow square"></div>
+                <div className="scene-illustration square">
                   <img 
-                    src="https://images.unsplash.com/photo-1696453423500-98461c31ed64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHx3b21hbiUyMG9mZmljZSUyMGRlc2slMjBzdHJldGNoJTIwd2VsbG5lc3N8ZW58MHx8fHwxNzcwMDE4NjE5fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
-                    alt="Woman doing desk stretch" 
+                    src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/73d11609e8ba3b41600d59f461b0cacd5966ce39d56d0f446b95ebd610f557b5.png" 
+                    alt="Illustration of woman doing desk stretches" 
                     className="scene-image"
                   />
                   <div className="calendar-notif">🌿</div>
@@ -309,10 +309,10 @@ const HomePage = () => {
 
               {/* 1:00 PM - Post-Lunch */}
               <div className="journey-scene">
-                <div className="scene-illustration">
+                <div className="scene-illustration square">
                   <img 
-                    src="https://images.unsplash.com/photo-1762341117487-dbc411bcf574?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGZvY3VzZWQlMjB3b3JraW5nJTIwY29tcHV0ZXIlMjBvZmZpY2V8ZW58MHx8fHwxNzcwMDE4NjI0fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
-                    alt="Woman focused working at computer" 
+                    src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/57ba1015fd7004246dd11dc64e9148227024897b9249e9c8bae0e9d17bd50adc.png" 
+                    alt="Illustration of woman focused working" 
                     className="scene-image"
                   />
                 </div>
@@ -330,11 +330,11 @@ const HomePage = () => {
 
               {/* 3:30 PM - Second Reset */}
               <div className="journey-scene is-reset">
-                <div className="reset-glow"></div>
-                <div className="scene-illustration">
+                <div className="reset-glow square"></div>
+                <div className="scene-illustration square">
                   <img 
-                    src="https://images.unsplash.com/photo-1758874384683-0accd9fb26ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG1lZGl0YXRpb24lMjBicmVhdGh3b3JrJTIwb2ZmaWNlJTIwY2FsbXxlbnwwfHx8fDE3NzAwMTg2Mjh8MA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
-                    alt="Woman meditating at desk" 
+                    src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/9adfbf380477e5c4d12b6859d56bc4b38b026202903f6e0455e566f000d97fb4.png" 
+                    alt="Illustration of woman doing breathwork meditation" 
                     className="scene-image"
                   />
                   <div className="calendar-notif">🌿</div>
@@ -351,28 +351,6 @@ const HomePage = () => {
                   <div className="energy-badge recharged">
                     <Wind size={12} />
                     <span>Stress Relief ~</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 5:00 PM - End Day */}
-              <div className="journey-scene">
-                <div className="scene-illustration">
-                  <img 
-                    src="https://images.unsplash.com/photo-1758518730896-bd8f677cfec3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHdvbWFuJTIwbGVhdmluZyUyMG9mZmljZSUyMGVuZCUyMG9mJTIwZGF5JTIwZW5lcmdpemVkfGVufDB8fHx8MTc3MDAxODYzMXww&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
-                    alt="Happy woman ending workday" 
-                    className="scene-image"
-                  />
-                  <div className="sparkle-overlay">✨</div>
-                </div>
-                <div className="timeline-marker"></div>
-                <div className="scene-info">
-                  <span className="scene-time">5:00 PM</span>
-                  <h4 className="scene-label">End Day</h4>
-                  <p className="scene-desc">Finishing energized</p>
-                  <div className="energy-badge high improved">
-                    <Smile size={12} />
-                    <span>High Energy ↑</span>
                   </div>
                 </div>
               </div>
