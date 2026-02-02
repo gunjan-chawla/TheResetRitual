@@ -587,42 +587,103 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Workshops */}
-      <section className="section section-accent">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">{featuresData.workshops.title}</h2>
-            <p className="section-subtitle">{featuresData.workshops.subtitle}</p>
+      {/* Workshops - Visual Design */}
+      <section className="workshops-section" id="workshops">
+        <div className="workshops-container">
+          <div className="workshops-header">
+            <span className="workshops-overline">Quarterly Experiences</span>
+            <h2 className="workshops-title">{featuresData.workshops.title}</h2>
+            <p className="workshops-subtitle">{featuresData.workshops.subtitle}</p>
           </div>
-          <div className="workshops-grid">
-            {featuresData.workshops.items.map((workshop, index) => (
-              <div key={index} className="workshop-card">
-                <div className="workshop-header">
-                  <div className="workshop-subtitle">{workshop.subtitle}</div>
-                  <div className="workshop-title">{workshop.title}</div>
-                </div>
-                <div className="workshop-body">
-                  <p className="stat-description">{workshop.description}</p>
+          
+          <div className="workshops-visual-grid">
+            {/* Workshop 1: Yoga + Zumba */}
+            <div className="workshop-visual-card">
+              <div className="workshop-image-wrapper">
+                <img 
+                  src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/b8172f027412990e15efa5e1318b824f62bc2b217582eba6ca60068c31f5bde7.png" 
+                  alt="Yoga and Zumba workshop illustration"
+                  className="workshop-image"
+                />
+                <div className="workshop-badge energy">Energize</div>
+              </div>
+              <div className="workshop-content">
+                <span className="workshop-category">Wellness & Workplace Vibe</span>
+                <h3 className="workshop-name">Yoga + Zumba</h3>
+                <p className="workshop-desc">Energetic sessions combining mindfulness and movement</p>
+                <div className="workshop-features">
+                  <span className="workshop-feature"><Activity size={14} /> High Energy</span>
+                  <span className="workshop-feature"><Users size={14} /> Team Activity</span>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Workshop 2: Yoga + Nutrition */}
+            <div className="workshop-visual-card">
+              <div className="workshop-image-wrapper">
+                <img 
+                  src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/871f295a9d080bd7bf556e88c100a6e66941bdbae3ad385b51c1e4ab62e101b9.png" 
+                  alt="Yoga and Nutrition workshop illustration"
+                  className="workshop-image"
+                />
+                <div className="workshop-badge nourish">Nourish</div>
+              </div>
+              <div className="workshop-content">
+                <span className="workshop-category">Wellness & Nutrition Awareness</span>
+                <h3 className="workshop-name">Yoga + Nutrition</h3>
+                <p className="workshop-desc">Holistic approach to physical and dietary health</p>
+                <div className="workshop-features">
+                  <span className="workshop-feature"><Heart size={14} /> Healthy Living</span>
+                  <span className="workshop-feature"><Coffee size={14} /> Diet Tips</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Workshop 3: Yoga + Social Wellness */}
+            <div className="workshop-visual-card">
+              <div className="workshop-image-wrapper">
+                <img 
+                  src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/843197809989c9010318e48f204aacd6d6fd6399e773d7b8ac3923b262595a76.png" 
+                  alt="Social Wellness workshop illustration"
+                  className="workshop-image"
+                />
+                <div className="workshop-badge connect">Connect</div>
+              </div>
+              <div className="workshop-content">
+                <span className="workshop-category">Community Building</span>
+                <h3 className="workshop-name">Yoga + Social Wellness</h3>
+                <p className="workshop-desc">Strengthen team bonds through shared wellness</p>
+                <div className="workshop-features">
+                  <span className="workshop-feature"><Users size={14} /> Partner Work</span>
+                  <span className="workshop-feature"><Smile size={14} /> Team Bonding</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Power of Both */}
-          <div className="section-header" style={{ marginTop: '5rem' }}>
-            <h2 className="section-title">{featuresData.powerOfBoth.title}</h2>
-          </div>
-          <div className="power-of-both">
-            <div className="power-card">
-              <h3 className="feature-title">{featuresData.powerOfBoth.daily.title}</h3>
-              <p className="stat-description">{featuresData.powerOfBoth.daily.description}</p>
+          <div className="power-of-both-section">
+            <h3 className="power-title">{featuresData.powerOfBoth.title}</h3>
+            <div className="power-grid">
+              <div className="power-card daily">
+                <div className="power-icon">
+                  <Monitor size={32} />
+                </div>
+                <h4 className="power-card-title">{featuresData.powerOfBoth.daily.title}</h4>
+                <p className="power-card-desc">{featuresData.powerOfBoth.daily.description}</p>
+              </div>
+              <div className="power-plus">+</div>
+              <div className="power-card quarterly">
+                <div className="power-icon">
+                  <Users size={32} />
+                </div>
+                <h4 className="power-card-title">{featuresData.powerOfBoth.quarterly.title}</h4>
+                <p className="power-card-desc">{featuresData.powerOfBoth.quarterly.description}</p>
+              </div>
             </div>
-            <div className="power-card">
-              <h3 className="feature-title">{featuresData.powerOfBoth.quarterly.title}</h3>
-              <p className="stat-description">{featuresData.powerOfBoth.quarterly.description}</p>
-            </div>
-            <div className="synthesis-banner">
-              {featuresData.powerOfBoth.synthesis}
+            <div className="power-synthesis">
+              <span className="synthesis-equals">=</span>
+              <span className="synthesis-text">{featuresData.powerOfBoth.synthesis}</span>
             </div>
           </div>
         </div>
