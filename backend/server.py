@@ -22,6 +22,13 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# Email configuration
+SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+SMTP_PORT = int(os.environ.get('SMTP_PORT', '587'))
+SMTP_USERNAME = os.environ.get('SMTP_USERNAME', '')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'Gunjan@thepro.fit')
+
 # Create the main app without a prefix
 app = FastAPI()
 
