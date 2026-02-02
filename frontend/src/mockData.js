@@ -165,16 +165,32 @@ export const solutionData = {
   ],
   howItWorks: {
     title: "How It Works",
-    subtitle: "7-step journey from survey to impact",
+    subtitle: "12 minutes. That's all it takes.",
+    trustSignals: ["Camera Optional", "No Prep", "Desk-Friendly"],
+    statLine: "Join 500+ companies resetting daily",
     steps: [
-      { number: "1", title: "Employee Pulse Survey", description: "Understand team needs and preferences" },
-      { number: "2", title: "Data-Led Program Design", description: "Customize based on insights" },
-      { number: "3", title: "HR Sets Structure", description: "Configure frequency and session types" },
-      { number: "4", title: "Calendar Integration", description: "Google/Outlook/Teams auto-scheduling" },
-      { number: "5", title: "Simple Employee Experience", description: "One-click join, no app needed" },
-      { number: "6", title: "Rewards & Recognition", description: "Celebrate participation and consistency" },
-      { number: "7", title: "Quarterly Impact Reports", description: "Measure engagement and ROI" }
-    ]
+      { 
+        number: "1", 
+        title: "Connect Your Calendar",
+        description: "One-click integration with Google, Outlook, or Teams"
+      },
+      { 
+        number: "2", 
+        title: "Choose Your Rituals", 
+        description: "Select from movement, breathwork, meditation, or energy sessions"
+      },
+      { 
+        number: "3", 
+        title: "Reset & Recharge",
+        description: "Join live sessions or access on-demand—12 minutes that transform your day"
+      }
+    ],
+    cta: {
+      text: "Book a Demo",
+      url: "https://brightbreaks.com/learn/"
+    },
+    testimonial: "The calendar integration is genius. No friction, no excuses—just consistent wellness.",
+    testimonialAuthor: "Sarah M., Head of People"
   }
 };
 
