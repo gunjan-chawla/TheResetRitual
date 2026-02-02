@@ -250,7 +250,7 @@ const HomePage = () => {
             <p className="journey-map-subtitle">{solutionData.subtitle}</p>
           </div>
 
-          {/* Timeline with Illustrated Scenes */}
+          {/* Timeline with Real Person Images */}
           <div className="journey-timeline-v2">
             {/* Timeline Bar */}
             <div className="timeline-track">
@@ -262,22 +262,11 @@ const HomePage = () => {
               {/* 9:00 AM - Start Day */}
               <div className="journey-scene">
                 <div className="scene-illustration">
-                  <div className="scene-character start-day">
-                    <div className="desk-setup">
-                      <div className="laptop">
-                        <div className="laptop-screen"></div>
-                        <div className="laptop-base"></div>
-                      </div>
-                      <div className="coffee-cup">
-                        <div className="steam"></div>
-                      </div>
-                    </div>
-                    <div className="person seated">
-                      <div className="head"></div>
-                      <div className="body"></div>
-                      <div className="arms typing"></div>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1696453424699-f6ebbe24c28a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG9mZmljZSUyMGRlc2slMjBzdHJldGNoJTIwd2VsbG5lc3N8ZW58MHx8fHwxNzcwMDE4NjE5fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
+                    alt="Woman starting workday at desk" 
+                    className="scene-image"
+                  />
                 </div>
                 <div className="timeline-marker"></div>
                 <div className="scene-info">
@@ -295,16 +284,12 @@ const HomePage = () => {
               <div className="journey-scene is-reset">
                 <div className="reset-glow"></div>
                 <div className="scene-illustration">
-                  <div className="scene-character stretching">
-                    <div className="person standing stretch">
-                      <div className="head relaxed"></div>
-                      <div className="body"></div>
-                      <div className="arms stretched"></div>
-                    </div>
-                    <div className="calendar-notification">
-                      <div className="notif-icon">🌿</div>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1696453423500-98461c31ed64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHx3b21hbiUyMG9mZmljZSUyMGRlc2slMjBzdHJldGNoJTIwd2VsbG5lc3N8ZW58MHx8fHwxNzcwMDE4NjE5fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
+                    alt="Woman doing desk stretch" 
+                    className="scene-image"
+                  />
+                  <div className="calendar-notif">🌿</div>
                 </div>
                 <div className="timeline-marker reset"></div>
                 <div className="scene-info">
@@ -325,18 +310,11 @@ const HomePage = () => {
               {/* 1:00 PM - Post-Lunch */}
               <div className="journey-scene">
                 <div className="scene-illustration">
-                  <div className="scene-character focused">
-                    <div className="desk-setup">
-                      <div className="monitor">
-                        <div className="monitor-screen active"></div>
-                      </div>
-                    </div>
-                    <div className="person seated focused">
-                      <div className="head focused"></div>
-                      <div className="body"></div>
-                      <div className="focus-lines"></div>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1762341117487-dbc411bcf574?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGZvY3VzZWQlMjB3b3JraW5nJTIwY29tcHV0ZXIlMjBvZmZpY2V8ZW58MHx8fHwxNzcwMDE4NjI0fDA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
+                    alt="Woman focused working at computer" 
+                    className="scene-image"
+                  />
                 </div>
                 <div className="timeline-marker"></div>
                 <div className="scene-info">
@@ -354,17 +332,12 @@ const HomePage = () => {
               <div className="journey-scene is-reset">
                 <div className="reset-glow"></div>
                 <div className="scene-illustration">
-                  <div className="scene-character breathing">
-                    <div className="person seated calm">
-                      <div className="head eyes-closed"></div>
-                      <div className="body relaxed"></div>
-                      <div className="breath-waves">
-                        <div className="wave w1"></div>
-                        <div className="wave w2"></div>
-                        <div className="wave w3"></div>
-                      </div>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1758874384683-0accd9fb26ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG1lZGl0YXRpb24lMjBicmVhdGh3b3JrJTIwb2ZmaWNlJTIwY2FsbXxlbnwwfHx8fDE3NzAwMTg2Mjh8MA&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
+                    alt="Woman meditating at desk" 
+                    className="scene-image"
+                  />
+                  <div className="calendar-notif">🌿</div>
                 </div>
                 <div className="timeline-marker reset"></div>
                 <div className="scene-info">
@@ -385,17 +358,12 @@ const HomePage = () => {
               {/* 5:00 PM - End Day */}
               <div className="journey-scene">
                 <div className="scene-illustration">
-                  <div className="scene-character ending">
-                    <div className="person standing happy">
-                      <div className="head smiling"></div>
-                      <div className="body"></div>
-                      <div className="bag"></div>
-                    </div>
-                    <div className="energy-sparkles">
-                      <span className="sparkle s1">✨</span>
-                      <span className="sparkle s2">✨</span>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1758518730896-bd8f677cfec3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHdvbWFuJTIwbGVhdmluZyUyMG9mZmljZSUyMGVuZCUyMG9mJTIwZGF5JTIwZW5lcmdpemVkfGVufDB8fHx8MTc3MDAxODYzMXww&ixlib=rb-4.1.0&q=85&w=400&h=400&fit=crop" 
+                    alt="Happy woman ending workday" 
+                    className="scene-image"
+                  />
+                  <div className="sparkle-overlay">✨</div>
                 </div>
                 <div className="timeline-marker"></div>
                 <div className="scene-info">
@@ -407,114 +375,6 @@ const HomePage = () => {
                     <span>High Energy ↑</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Energy Curve Graph */}
-          <div className="energy-curve-section">
-            <h3 className="energy-curve-title">{solutionData.energyCurve.title}</h3>
-            <p className="energy-curve-desc">See how Reset Rituals maintain your energy throughout the day</p>
-            <div className="energy-graph-container">
-              <div className="y-axis-labels">
-                <span>High</span>
-                <span>Medium</span>
-                <span>Low</span>
-              </div>
-              <div className="energy-graph">
-                <svg className="energy-curve-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="energyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.05" />
-                    </linearGradient>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#94a3b8" />
-                      <stop offset="30%" stopColor="#14b8a6" />
-                      <stop offset="50%" stopColor="#0d9488" />
-                      <stop offset="70%" stopColor="#14b8a6" />
-                      <stop offset="100%" stopColor="#10b981" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Grid lines */}
-                  <line x1="0" y1="45" x2="700" y2="45" className="grid-line" />
-                  <line x1="0" y1="90" x2="700" y2="90" className="grid-line" />
-                  <line x1="0" y1="135" x2="700" y2="135" className="grid-line" />
-                  
-                  {/* Area under curve */}
-                  <path
-                    className="energy-area"
-                    d={`M 0,${180 - (solutionData.energyCurve.points[0].energy * 1.6)} 
-                        ${solutionData.energyCurve.points.map((point, i) => 
-                          `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${180 - (point.energy * 1.6)}`
-                        ).join(' ')} 
-                        L 700,180 L 0,180 Z`}
-                  />
-                  
-                  {/* Curve line */}
-                  <path
-                    className="energy-curve-line"
-                    d={`M 0,${180 - (solutionData.energyCurve.points[0].energy * 1.6)} 
-                        ${solutionData.energyCurve.points.map((point, i) => 
-                          `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${180 - (point.energy * 1.6)}`
-                        ).join(' ')}`}
-                  />
-                  
-                  {/* Data points with labels */}
-                  {solutionData.energyCurve.points.map((point, i) => {
-                    const x = (i / (solutionData.energyCurve.points.length - 1)) * 700;
-                    const y = 180 - (point.energy * 1.6);
-                    const isReset = point.label.includes('Reset');
-                    
-                    return (
-                      <g key={i} className="data-point-group">
-                        {isReset && (
-                          <circle
-                            className="reset-pulse"
-                            cx={x}
-                            cy={y}
-                            r="16"
-                          />
-                        )}
-                        <circle
-                          className={`energy-point ${isReset ? 'reset' : ''}`}
-                          cx={x}
-                          cy={y}
-                          r={isReset ? 10 : 6}
-                        />
-                        <text
-                          className={`energy-time-label ${isReset ? 'reset' : ''}`}
-                          x={x}
-                          y="175"
-                          textAnchor="middle"
-                        >
-                          {point.time}
-                        </text>
-                        {isReset && (
-                          <text
-                            className="reset-marker-label"
-                            x={x}
-                            y={y - 20}
-                            textAnchor="middle"
-                          >
-                            🌿 Reset
-                          </text>
-                        )}
-                      </g>
-                    );
-                  })}
-                </svg>
-              </div>
-            </div>
-            <div className="energy-legend">
-              <div className="legend-item">
-                <span className="legend-dot normal"></span>
-                <span>Regular Workday</span>
-              </div>
-              <div className="legend-item">
-                <span className="legend-dot reset"></span>
-                <span>Reset Ritual Boost</span>
               </div>
             </div>
           </div>
