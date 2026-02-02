@@ -2085,3 +2085,335 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Journey Map Timeline Section */
+.journey-map-section {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  padding: 6rem 3rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.journey-map-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.journey-map-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.journey-map-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.journey-map-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+/* Timeline */
+.journey-timeline {
+  position: relative;
+  padding: 4rem 2rem;
+  margin: 3rem 0;
+}
+
+.timeline-bar {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: linear-gradient(90deg, #cbd5e1 0%, #14b8a6 50%, #cbd5e1 100%);
+  transform: translateY(-50%);
+  border-radius: 4px;
+}
+
+.timeline-dots {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-moment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  z-index: 10;
+}
+
+.journey-illustration {
+  width: 180px;
+  height: 180px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border: 4px solid #e2e8f0;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.journey-moment.is-reset .journey-illustration {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 12px rgba(20, 184, 166, 0.1), 0 8px 24px rgba(20, 184, 166, 0.2);
+  animation: reset-glow 2s ease-in-out infinite;
+}
+
+@keyframes reset-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 12px rgba(20, 184, 166, 0.1), 0 8px 24px rgba(20, 184, 166, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(20, 184, 166, 0.05), 0 12px 32px rgba(20, 184, 166, 0.3);
+  }
+}
+
+.journey-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.journey-moment.is-reset .journey-icon-wrapper {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.journey-icon {
+  color: #64748b;
+}
+
+.journey-moment.is-reset .journey-icon {
+  color: white;
+}
+
+.reset-star {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 32px;
+  animation: star-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes star-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.journey-moment.is-reset .timeline-dot {
+  width: 28px;
+  height: 28px;
+  background: #14b8a6;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.4);
+}
+
+.journey-content {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.journey-time {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.journey-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.journey-moment.is-reset .journey-label {
+  color: #14b8a6;
+  font-weight: 700;
+}
+
+.journey-description {
+  font-size: 14px;
+  color: #64748b;
+  max-width: 150px;
+}
+
+.journey-moment.is-reset .journey-description {
+  color: #0d9488;
+  font-weight: 600;
+}
+
+.energy-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.energy-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.energy-high {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.energy-boosted,
+.energy-recharged {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Energy Curve Graph */
+.energy-curve-section {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 4rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.energy-curve-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.energy-graph {
+  position: relative;
+  height: 300px;
+  padding: 2rem 1rem;
+}
+
+.energy-curve-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.energy-curve-line {
+  fill: none;
+  stroke: #14b8a6;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.energy-area {
+  fill: url(#energyGradient);
+  opacity: 0.2;
+}
+
+.energy-point {
+  fill: white;
+  stroke: #14b8a6;
+  stroke-width: 3;
+}
+
+.energy-point.reset {
+  fill: #14b8a6;
+  r: 8;
+}
+
+.energy-label {
+  font-size: 11px;
+  fill: #64748b;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .timeline-dots {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .journey-moment {
+    flex: 0 0 calc(33.333% - 2rem);
+  }
+  
+  .timeline-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-map-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .journey-map-title {
+    font-size: 36px;
+  }
+  
+  .journey-map-subtitle {
+    font-size: 18px;
+  }
+  
+  .timeline-dots {
+    flex-direction: column;
+  }
+  
+  .journey-moment {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .journey-illustration {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .journey-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .energy-curve-section {
+    padding: 2rem 1rem;
+  }
+  
+  .energy-graph {
+    height: 250px;
+  }
+}
