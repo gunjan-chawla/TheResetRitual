@@ -857,8 +857,115 @@ const HomePage = () => {
         <p className="thought-line-text">{finalCTAData.thoughtLine}</p>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="contact-form-section" id="contact">
+        <div className="contact-form-container">
+          <div className="contact-form-header">
+            <h2 className="contact-form-title">Get in Touch</h2>
+            <p className="contact-form-subtitle">Ready to bring Reset Rituals to your workplace? Let's talk.</p>
+          </div>
+          
+          <form 
+            action="https://formsubmit.co/Gunjan@thepro.fit" 
+            method="POST"
+            className="contact-form"
+            data-testid="contact-form"
+          >
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="New Reset Rituals Inquiry" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://resetritual.ai" />
+            
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name" className="form-label">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name"
+                  name="name" 
+                  required 
+                  className="form-input"
+                  placeholder="Your name"
+                  data-testid="contact-name"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email" className="form-label">Work Email *</label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email" 
+                  required 
+                  className="form-input"
+                  placeholder="you@company.com"
+                  data-testid="contact-email"
+                />
+              </div>
+            </div>
+            
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="company" className="form-label">Company Name *</label>
+                <input 
+                  type="text" 
+                  id="company"
+                  name="company" 
+                  required 
+                  className="form-input"
+                  placeholder="Your company"
+                  data-testid="contact-company"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="team_size" className="form-label">Team Size</label>
+                <select 
+                  id="team_size"
+                  name="team_size" 
+                  className="form-input form-select"
+                  data-testid="contact-team-size"
+                >
+                  <option value="">Select team size</option>
+                  <option value="10-50">10-50 employees</option>
+                  <option value="50-100">50-100 employees</option>
+                  <option value="100-500">100-500 employees</option>
+                  <option value="500-1000">500-1000 employees</option>
+                  <option value="1000+">1000+ employees</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className="form-group full-width">
+              <label htmlFor="message" className="form-label">Tell us about your wellness goals</label>
+              <textarea 
+                id="message"
+                name="message" 
+                rows="4"
+                className="form-input form-textarea"
+                placeholder="What challenges is your team facing? What are you looking to achieve?"
+                data-testid="contact-message"
+              ></textarea>
+            </div>
+            
+            <button type="submit" className="form-submit-btn" data-testid="contact-submit">
+              <Send size={18} />
+              Send Message
+            </button>
+          </form>
+          
+          <div className="contact-alternatives">
+            <p>Or reach us directly:</p>
+            <div className="contact-direct">
+              <a href="mailto:Gunjan@thepro.fit" className="contact-link">
+                <Mail size={16} /> Gunjan@thepro.fit
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section className="final-cta" id="contact">
+      <section className="final-cta">
         <div className="container">
           <h2 className="section-title">{finalCTAData.title}</h2>
           <div className="cta-buttons">
