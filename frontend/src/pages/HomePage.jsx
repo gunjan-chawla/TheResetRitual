@@ -544,8 +544,6 @@ const HomePage = () => {
               </div>
             </div>
           </section>
-        </div>
-      </section>
 
       {/* Features - Live Rituals */}
       <section className="section">
