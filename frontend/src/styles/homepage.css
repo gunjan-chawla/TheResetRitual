@@ -2221,7 +2221,7 @@ body {
   }
 }
 
-/* Scene Illustration Container with Real Images */
+/* Scene Illustration Container - Square Design */
 .scene-illustration {
   width: 140px;
   height: 140px;
@@ -2236,6 +2236,13 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
+}
+
+/* Square variant */
+.scene-illustration.square {
+  border-radius: 16px;
+  width: 180px;
+  height: 180px;
 }
 
 .journey-scene:hover .scene-illustration {
