@@ -2145,9 +2145,9 @@ body {
 /* Timeline Track */
 .timeline-track {
   position: absolute;
-  top: 140px;
-  left: 5%;
-  right: 5%;
+  top: 160px;
+  left: 10%;
+  right: 10%;
   height: 6px;
   background: linear-gradient(90deg, #e2e8f0 0%, #e2e8f0 100%);
   border-radius: 3px;
@@ -2162,12 +2162,12 @@ body {
   height: 100%;
   background: linear-gradient(90deg, 
     #94a3b8 0%, 
-    #14b8a6 25%, 
-    #0d9488 35%,
-    #64748b 50%,
-    #14b8a6 65%,
-    #0d9488 75%,
-    #10b981 100%
+    #14b8a6 30%, 
+    #0d9488 40%,
+    #64748b 55%,
+    #14b8a6 70%,
+    #0d9488 85%,
+    #94a3b8 100%
   );
   border-radius: 3px;
 }
@@ -2180,6 +2180,13 @@ body {
   gap: 1rem;
   position: relative;
   z-index: 10;
+}
+
+/* Four items layout */
+.journey-scenes.four-items {
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: space-around;
 }
 
 /* Individual Scene */
