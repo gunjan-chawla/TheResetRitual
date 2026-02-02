@@ -2265,6 +2265,11 @@ body {
   transition: transform 0.4s ease;
 }
 
+/* Square image */
+.scene-illustration.square .scene-image {
+  border-radius: 12px;
+}
+
 .journey-scene:hover .scene-image {
   transform: scale(1.1);
 }
