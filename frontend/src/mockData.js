@@ -196,6 +196,35 @@ export const solutionData = {
       { time: "3:30", energy: 80, label: "Reset Recharge" },
       { time: "5:00", energy: 75, label: "Strong Finish" }
     ]
+  },
+  howItWorks: {
+    title: "How It Works",
+    subtitle: "12 minutes. That's all it takes.",
+    trustSignals: ["Camera Optional", "No Prep", "Desk-Friendly"],
+    statLine: "Join 500+ companies resetting daily",
+    steps: [
+      { 
+        number: "1", 
+        title: "Connect Your Calendar",
+        description: "One-click integration with Google, Outlook, or Teams"
+      },
+      { 
+        number: "2", 
+        title: "Choose Your Rituals", 
+        description: "Select from movement, breathwork, meditation, or energy sessions"
+      },
+      { 
+        number: "3", 
+        title: "Reset & Recharge",
+        description: "Join live sessions or access on-demand—12 minutes that transform your day"
+      }
+    ],
+    cta: {
+      text: "Book a Demo",
+      url: "https://brightbreaks.com/learn/"
+    },
+    testimonial: "The calendar integration is genius. No friction, no excuses—just consistent wellness.",
+    testimonialAuthor: "Sarah M., Head of People"
   }
 };
 
