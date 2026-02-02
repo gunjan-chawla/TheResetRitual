@@ -2210,6 +2210,14 @@ body {
   pointer-events: none;
 }
 
+/* Square glow variant */
+.reset-glow.square {
+  width: 200px;
+  height: 200px;
+  border-radius: 24px;
+  background: radial-gradient(ellipse, rgba(20, 184, 166, 0.3) 0%, rgba(20, 184, 166, 0.1) 40%, transparent 70%);
+}
+
 @keyframes glow-pulse {
   0%, 100% {
     transform: translateX(-50%) scale(1);
