@@ -1843,20 +1843,311 @@ body {
   padding: 2rem;
 }
 
-/* Power of Both Section */
-.power-of-both {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 3rem;
+/* ========================================
+   WORKSHOPS SECTION - Visual Design
+   ======================================== */
+
+.workshops-section {
+  background: linear-gradient(180deg, #f8faf9 0%, #ffffff 50%, #faf8f6 100%);
+  padding: 6rem 2rem;
+  position: relative;
 }
 
-.power-card {
+.workshops-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.workshops-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.workshops-overline {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #14b8a6;
+  background: rgba(20, 184, 166, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.workshops-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.workshops-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: #64748b;
+}
+
+/* Visual Workshop Cards Grid */
+.workshops-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.workshop-visual-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+}
+
+.workshop-visual-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.workshop-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.workshop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workshop-visual-card:hover .workshop-image {
+  transform: scale(1.08);
+}
+
+.workshop-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.workshop-badge.energy {
+  background: rgba(249, 115, 22, 0.9);
+  color: white;
+}
+
+.workshop-badge.nourish {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.workshop-badge.connect {
+  background: rgba(139, 92, 246, 0.9);
+  color: white;
+}
+
+.workshop-content {
+  padding: 1.75rem;
+}
+
+.workshop-category {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.workshop-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.workshop-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.workshop-features {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.workshop-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.workshop-feature svg {
+  color: #14b8a6;
+}
+
+/* Power of Both Section */
+.power-of-both-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.power-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.power-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.power-of-both-section .power-card {
   background: white;
   border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+  flex: 1;
+  max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.power-of-both-section .power-card.daily {
+  border-top: 4px solid #14b8a6;
+}
+
+.power-of-both-section .power-card.quarterly {
+  border-top: 4px solid #8b5cf6;
+}
+
+.power-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.power-card.daily .power-icon {
+  background: rgba(20, 184, 166, 0.1);
+  color: #14b8a6;
+}
+
+.power-card.quarterly .power-icon {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.power-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.power-card-desc {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.power-plus {
+  font-size: 36px;
+  font-weight: 300;
+  color: #94a3b8;
+}
+
+.power-synthesis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.synthesis-equals {
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.synthesis-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Responsive for Workshops */
+@media (max-width: 1024px) {
+  .workshops-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .power-grid {
+    flex-direction: column;
+  }
+  
+  .power-plus {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .workshops-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .workshops-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .workshop-image-wrapper {
+    height: 180px;
+  }
+  
+  .power-of-both-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .power-of-both-section .power-card {
+    max-width: 100%;
+  }
 }
 
 .synthesis-banner {
