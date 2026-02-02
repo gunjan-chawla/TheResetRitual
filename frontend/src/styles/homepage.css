@@ -854,68 +854,376 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* Steps Timeline - Horizontal Matrix */
-.steps-timeline {
+/* How It Works - Visual First Design */
+.how-it-works-visual-section {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works-container {
   max-width: 1400px;
-  margin: 3rem auto 0;
+  margin: 0 auto;
+}
+
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.how-it-works-stat-line {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #14b8a6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.how-it-works-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.how-it-works-subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+/* Calendar Hero Visual */
+.calendar-hero-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   position: relative;
 }
 
-.steps-horizontal-grid {
+.workday-calendar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+}
+
+.time-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 2.5rem;
+}
+
+.time-slot {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   position: relative;
 }
 
-.step-item {
+.calendar-header-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.day-header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #475569;
+  padding: 0.5rem;
+}
+
+.calendar-day-column {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.event-block {
+  background: #e0f2fe;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 0.75rem;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+}
+
+.event-block.meeting {
+  background: #e0e7ff;
+  border-left-color: #6366f1;
+}
+
+.event-block.reset-ritual {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border-left-color: #14b8a6;
+  cursor: pointer;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.event-block.reset-ritual:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
+  z-index: 10;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
+  }
+}
+
+.event-time {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.event-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.event-block.reset-ritual .event-title {
+  color: #065f46;
+  font-weight: 700;
+}
+
+/* Hover Preview Popup */
+.event-preview-popup {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #14b8a6;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.event-block.reset-ritual:hover .event-preview-popup {
+  opacity: 1;
+  top: -120%;
+}
+
+.preview-title {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.preview-detail {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+/* Trust Signals */
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.trust-signal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #14b8a6;
+  padding: 0.5rem 1rem;
+  background: rgba(20, 184, 166, 0.08);
+  border-radius: 20px;
+}
+
+.trust-check {
+  color: #14b8a6;
+}
+
+/* Steps Grid */
+.steps-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 4rem auto 3rem;
+}
+
+.step-simple-card {
+  text-align: center;
+  padding: 2rem;
   background: white;
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
-  text-align: center;
 }
 
-.step-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-  border-color: var(--olive-primary);
+.step-simple-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-.step-number {
+.step-simple-number {
   width: 60px;
   height: 60px;
-  background: var(--olive-primary);
-  border: none;
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 28px;
   font-weight: 700;
-  color: white;
   margin: 0 auto 1.5rem;
 }
 
-.step-content {
-  flex: 1;
-  padding-top: 0;
-}
-
-.step-title {
-  font-weight: 600;
-  font-size: 1.125rem;
-  color: var(--text-primary);
+.step-simple-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
   margin-bottom: 0.75rem;
 }
 
-.step-description {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
+.step-simple-description {
+  font-size: 15px;
+  color: #64748b;
   line-height: 1.6;
+}
+
+/* CTA Section */
+.how-it-works-cta-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.how-it-works-testimonial {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  border-left: 4px solid #14b8a6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-text {
+  font-size: 18px;
+  font-style: italic;
+  color: #475569;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.testimonial-author-small {
+  font-size: 14px;
+  font-weight: 600;
+  color: #14b8a6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .steps-simple-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .calendar-day-column {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works-visual-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .how-it-works-title {
+    font-size: 36px;
+  }
+  
+  .how-it-works-subtitle {
+    font-size: 20px;
+  }
+  
+  .calendar-hero-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .workday-calendar {
+    grid-template-columns: 60px 1fr;
+  }
+  
+  .time-slot {
+    font-size: 10px;
+    height: 50px;
+  }
+  
+  .event-block {
+    height: 50px;
+    padding: 0.5rem;
+  }
+  
+  .event-time {
+    font-size: 9px;
+  }
+  
+  .event-title {
+    font-size: 11px;
+  }
+  
+  .calendar-day-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-signals {
+    gap: 1rem;
+  }
+  
+  .steps-simple-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Comparison Section - Evolution of Wellness Design */
