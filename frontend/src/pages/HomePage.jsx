@@ -250,92 +250,272 @@ const HomePage = () => {
             <p className="journey-map-subtitle">{solutionData.subtitle}</p>
           </div>
 
-          {/* Timeline */}
-          <div className="journey-timeline">
-            <div className="timeline-bar"></div>
-            <div className="timeline-dots">
-              {solutionData.journeyMap.map((moment, index) => {
-                const IconComponent = iconMap[moment.icon];
-                return (
-                  <div key={index} className={`journey-moment ${moment.isReset ? 'is-reset' : ''}`}>
-                    <div className="journey-illustration">
-                      <div className="journey-icon-wrapper">
-                        {IconComponent && <IconComponent size={40} className="journey-icon" />}
+          {/* Timeline with Illustrated Scenes */}
+          <div className="journey-timeline-v2">
+            {/* Timeline Bar */}
+            <div className="timeline-track">
+              <div className="timeline-progress"></div>
+            </div>
+
+            {/* Journey Moments */}
+            <div className="journey-scenes">
+              {/* 9:00 AM - Start Day */}
+              <div className="journey-scene">
+                <div className="scene-illustration">
+                  <div className="scene-character start-day">
+                    <div className="desk-setup">
+                      <div className="laptop">
+                        <div className="laptop-screen"></div>
+                        <div className="laptop-base"></div>
                       </div>
-                      {moment.highlight && <span className="reset-star">⭐</span>}
+                      <div className="coffee-cup">
+                        <div className="steam"></div>
+                      </div>
                     </div>
-                    <div className="timeline-dot"></div>
-                    <div className="journey-content">
-                      <div className="journey-time">{moment.time}</div>
-                      <div className="journey-label">{moment.label}</div>
-                      <div className="journey-description">{moment.description}</div>
-                      <span className={`energy-indicator energy-${moment.energyLevel}`}>
-                        {moment.energyLevel}
-                      </span>
+                    <div className="person seated">
+                      <div className="head"></div>
+                      <div className="body"></div>
+                      <div className="arms typing"></div>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+                <div className="timeline-marker"></div>
+                <div className="scene-info">
+                  <span className="scene-time">9:00 AM</span>
+                  <h4 className="scene-label">Start Day</h4>
+                  <p className="scene-desc">Arrive at desk, morning energy</p>
+                  <div className="energy-badge medium">
+                    <Activity size={12} />
+                    <span>Medium Energy</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 11:45 AM - First Reset */}
+              <div className="journey-scene is-reset">
+                <div className="reset-glow"></div>
+                <div className="scene-illustration">
+                  <div className="scene-character stretching">
+                    <div className="person standing stretch">
+                      <div className="head relaxed"></div>
+                      <div className="body"></div>
+                      <div className="arms stretched"></div>
+                    </div>
+                    <div className="calendar-notification">
+                      <div className="notif-icon">🌿</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="timeline-marker reset"></div>
+                <div className="scene-info">
+                  <div className="reset-badge">
+                    <Star size={14} fill="#fbbf24" />
+                    <span>RESET RITUAL</span>
+                  </div>
+                  <span className="scene-time">11:45 AM</span>
+                  <h4 className="scene-label reset">First Reset</h4>
+                  <p className="scene-desc highlight">12-min Posture Correction</p>
+                  <div className="energy-badge boosted">
+                    <TrendingDown size={12} style={{ transform: 'rotate(180deg)' }} />
+                    <span>Energy Boost ↑</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 1:00 PM - Post-Lunch */}
+              <div className="journey-scene">
+                <div className="scene-illustration">
+                  <div className="scene-character focused">
+                    <div className="desk-setup">
+                      <div className="monitor">
+                        <div className="monitor-screen active"></div>
+                      </div>
+                    </div>
+                    <div className="person seated focused">
+                      <div className="head focused"></div>
+                      <div className="body"></div>
+                      <div className="focus-lines"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="timeline-marker"></div>
+                <div className="scene-info">
+                  <span className="scene-time">1:00 PM</span>
+                  <h4 className="scene-label">Post-Lunch</h4>
+                  <p className="scene-desc">Working focused</p>
+                  <div className="energy-badge high">
+                    <Target size={12} />
+                    <span>High Focus</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3:30 PM - Second Reset */}
+              <div className="journey-scene is-reset">
+                <div className="reset-glow"></div>
+                <div className="scene-illustration">
+                  <div className="scene-character breathing">
+                    <div className="person seated calm">
+                      <div className="head eyes-closed"></div>
+                      <div className="body relaxed"></div>
+                      <div className="breath-waves">
+                        <div className="wave w1"></div>
+                        <div className="wave w2"></div>
+                        <div className="wave w3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="timeline-marker reset"></div>
+                <div className="scene-info">
+                  <div className="reset-badge">
+                    <Star size={14} fill="#fbbf24" />
+                    <span>RESET RITUAL</span>
+                  </div>
+                  <span className="scene-time">3:30 PM</span>
+                  <h4 className="scene-label reset">Second Reset</h4>
+                  <p className="scene-desc highlight">12-min Breathwork</p>
+                  <div className="energy-badge recharged">
+                    <Wind size={12} />
+                    <span>Stress Relief ~</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 5:00 PM - End Day */}
+              <div className="journey-scene">
+                <div className="scene-illustration">
+                  <div className="scene-character ending">
+                    <div className="person standing happy">
+                      <div className="head smiling"></div>
+                      <div className="body"></div>
+                      <div className="bag"></div>
+                    </div>
+                    <div className="energy-sparkles">
+                      <span className="sparkle s1">✨</span>
+                      <span className="sparkle s2">✨</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="timeline-marker"></div>
+                <div className="scene-info">
+                  <span className="scene-time">5:00 PM</span>
+                  <h4 className="scene-label">End Day</h4>
+                  <p className="scene-desc">Finishing energized</p>
+                  <div className="energy-badge high improved">
+                    <Smile size={12} />
+                    <span>High Energy ↑</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Energy Curve Graph */}
           <div className="energy-curve-section">
             <h3 className="energy-curve-title">{solutionData.energyCurve.title}</h3>
-            <div className="energy-graph">
-              <svg className="energy-curve-svg" viewBox="0 0 700 200" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="energyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.05" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Area under curve */}
-                <path
-                  className="energy-area"
-                  d={`M 0,${200 - (solutionData.energyCurve.points[0].energy * 1.5)} 
-                      ${solutionData.energyCurve.points.map((point, i) => 
-                        `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${200 - (point.energy * 1.5)}`
-                      ).join(' ')} 
-                      L 700,200 L 0,200 Z`}
-                />
-                
-                {/* Curve line */}
-                <path
-                  className="energy-curve-line"
-                  d={`M 0,${200 - (solutionData.energyCurve.points[0].energy * 1.5)} 
-                      ${solutionData.energyCurve.points.map((point, i) => 
-                        `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${200 - (point.energy * 1.5)}`
-                      ).join(' ')}`}
-                />
-                
-                {/* Data points */}
-                {solutionData.energyCurve.points.map((point, i) => {
-                  const x = (i / (solutionData.energyCurve.points.length - 1)) * 700;
-                  const y = 200 - (point.energy * 1.5);
-                  const isReset = point.label.includes('Reset');
+            <p className="energy-curve-desc">See how Reset Rituals maintain your energy throughout the day</p>
+            <div className="energy-graph-container">
+              <div className="y-axis-labels">
+                <span>High</span>
+                <span>Medium</span>
+                <span>Low</span>
+              </div>
+              <div className="energy-graph">
+                <svg className="energy-curve-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="energyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.05" />
+                    </linearGradient>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#94a3b8" />
+                      <stop offset="30%" stopColor="#14b8a6" />
+                      <stop offset="50%" stopColor="#0d9488" />
+                      <stop offset="70%" stopColor="#14b8a6" />
+                      <stop offset="100%" stopColor="#10b981" />
+                    </linearGradient>
+                  </defs>
                   
-                  return (
-                    <g key={i}>
-                      <circle
-                        className={`energy-point ${isReset ? 'reset' : ''}`}
-                        cx={x}
-                        cy={y}
-                        r={isReset ? 8 : 5}
-                      />
-                      <text
-                        className="energy-label"
-                        x={x}
-                        y={y - 15}
-                        textAnchor="middle"
-                      >
-                        {point.time}
-                      </text>
-                    </g>
-                  );
-                })}
-              </svg>
+                  {/* Grid lines */}
+                  <line x1="0" y1="45" x2="700" y2="45" className="grid-line" />
+                  <line x1="0" y1="90" x2="700" y2="90" className="grid-line" />
+                  <line x1="0" y1="135" x2="700" y2="135" className="grid-line" />
+                  
+                  {/* Area under curve */}
+                  <path
+                    className="energy-area"
+                    d={`M 0,${180 - (solutionData.energyCurve.points[0].energy * 1.6)} 
+                        ${solutionData.energyCurve.points.map((point, i) => 
+                          `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${180 - (point.energy * 1.6)}`
+                        ).join(' ')} 
+                        L 700,180 L 0,180 Z`}
+                  />
+                  
+                  {/* Curve line */}
+                  <path
+                    className="energy-curve-line"
+                    d={`M 0,${180 - (solutionData.energyCurve.points[0].energy * 1.6)} 
+                        ${solutionData.energyCurve.points.map((point, i) => 
+                          `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${180 - (point.energy * 1.6)}`
+                        ).join(' ')}`}
+                  />
+                  
+                  {/* Data points with labels */}
+                  {solutionData.energyCurve.points.map((point, i) => {
+                    const x = (i / (solutionData.energyCurve.points.length - 1)) * 700;
+                    const y = 180 - (point.energy * 1.6);
+                    const isReset = point.label.includes('Reset');
+                    
+                    return (
+                      <g key={i} className="data-point-group">
+                        {isReset && (
+                          <circle
+                            className="reset-pulse"
+                            cx={x}
+                            cy={y}
+                            r="16"
+                          />
+                        )}
+                        <circle
+                          className={`energy-point ${isReset ? 'reset' : ''}`}
+                          cx={x}
+                          cy={y}
+                          r={isReset ? 10 : 6}
+                        />
+                        <text
+                          className={`energy-time-label ${isReset ? 'reset' : ''}`}
+                          x={x}
+                          y="175"
+                          textAnchor="middle"
+                        >
+                          {point.time}
+                        </text>
+                        {isReset && (
+                          <text
+                            className="reset-marker-label"
+                            x={x}
+                            y={y - 20}
+                            textAnchor="middle"
+                          >
+                            🌿 Reset
+                          </text>
+                        )}
+                      </g>
+                    );
+                  })}
+                </svg>
+              </div>
+            </div>
+            <div className="energy-legend">
+              <div className="legend-item">
+                <span className="legend-dot normal"></span>
+                <span>Regular Workday</span>
+              </div>
+              <div className="legend-item">
+                <span className="legend-dot reset"></span>
+                <span>Reset Ritual Boost</span>
+              </div>
             </div>
           </div>
         </div>
