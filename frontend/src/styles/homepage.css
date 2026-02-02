@@ -2008,35 +2008,20 @@ body {
   color: #14b8a6;
 }
 
-/* Power of Both Section - HIGHLIGHTED */
+/* Power of Both Section - Clean Design */
 .power-of-both-section {
-  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #0d9488 100%);
-  border-radius: 32px;
+  background: #f8fafc;
+  border-radius: 24px;
   padding: 4rem 3rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(20, 184, 166, 0.3);
-}
-
-.power-of-both-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 .power-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
-  color: white;
+  color: #1e293b;
   margin-bottom: 3rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .power-grid {
@@ -2045,113 +2030,106 @@ body {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2.5rem;
-  position: relative;
-  z-index: 1;
 }
 
 .power-of-both-section .power-card {
   background: white;
-  border-radius: 24px;
+  border-radius: 20px;
   padding: 2.5rem 2rem;
   flex: 1;
-  max-width: 380px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border: none;
-  transition: transform 0.3s ease;
+  max-width: 360px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .power-of-both-section .power-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 .power-of-both-section .power-card.daily {
-  border-top: 6px solid #14b8a6;
+  border-top: 5px solid #14b8a6;
 }
 
 .power-of-both-section .power-card.quarterly {
-  border-top: 6px solid #8b5cf6;
+  border-top: 5px solid #8b5cf6;
 }
 
 .power-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
 }
 
 .power-card.daily .power-icon {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(20, 184, 166, 0.05) 100%);
+  background: rgba(20, 184, 166, 0.1);
   color: #0d9488;
 }
 
 .power-card.daily .power-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .power-card.quarterly .power-icon {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+  background: rgba(139, 92, 246, 0.1);
   color: #7c3aed;
 }
 
 .power-card.quarterly .power-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .power-card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 0.75rem;
 }
 
 .power-card-desc {
-  font-size: 16px;
+  font-size: 15px;
   color: #64748b;
   line-height: 1.6;
 }
 
 .power-plus {
-  font-size: 56px;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  font-weight: 300;
+  color: #cbd5e1;
   display: flex;
   align-items: center;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .power-synthesis {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 3rem;
-  border-radius: 16px;
-  max-width: 700px;
+  gap: 1rem;
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  padding: 1.25rem 2.5rem;
+  border-radius: 14px;
+  max-width: 650px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  z-index: 1;
 }
 
 .synthesis-equals {
-  font-size: 40px;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .synthesis-text {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   color: white;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive for Workshops */
@@ -2172,7 +2150,7 @@ body {
   
   .power-plus {
     transform: rotate(90deg);
-    font-size: 48px;
+    font-size: 40px;
     margin: 1rem 0;
   }
 }
@@ -2192,12 +2170,12 @@ body {
   }
   
   .power-of-both-section {
-    padding: 3rem 1.5rem;
-    border-radius: 24px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
   }
   
   .power-title {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 2rem;
   }
   
@@ -2207,16 +2185,16 @@ body {
   
   .power-synthesis {
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 1.25rem 1.5rem;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
   }
   
   .synthesis-equals {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .synthesis-text {
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
   }
 }
