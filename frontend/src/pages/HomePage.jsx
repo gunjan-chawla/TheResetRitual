@@ -242,27 +242,104 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="section section-alt" id="solutions">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">{solutionData.title}</h2>
-            <p className="section-subtitle">{solutionData.subtitle}</p>
+      {/* Solution Section - Journey Map */}
+      <section className="journey-map-section" id="solutions">
+        <div className="journey-map-container">
+          <div className="journey-map-header">
+            <h2 className="journey-map-title">{solutionData.title}</h2>
+            <p className="journey-map-subtitle">{solutionData.subtitle}</p>
           </div>
-          <div className="features-grid">
-            {solutionData.features.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon];
-              return (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">
-                    {IconComponent && <IconComponent size={28} />}
+
+          {/* Timeline */}
+          <div className="journey-timeline">
+            <div className="timeline-bar"></div>
+            <div className="timeline-dots">
+              {solutionData.journeyMap.map((moment, index) => {
+                const IconComponent = iconMap[moment.icon];
+                return (
+                  <div key={index} className={`journey-moment ${moment.isReset ? 'is-reset' : ''}`}>
+                    <div className="journey-illustration">
+                      <div className="journey-icon-wrapper">
+                        {IconComponent && <IconComponent size={40} className="journey-icon" />}
+                      </div>
+                      {moment.highlight && <span className="reset-star">⭐</span>}
+                    </div>
+                    <div className="timeline-dot"></div>
+                    <div className="journey-content">
+                      <div className="journey-time">{moment.time}</div>
+                      <div className="journey-label">{moment.label}</div>
+                      <div className="journey-description">{moment.description}</div>
+                      <span className={`energy-indicator energy-${moment.energyLevel}`}>
+                        {moment.energyLevel}
+                      </span>
+                    </div>
                   </div>
-                  <div className="feature-title">{feature.title}</div>
-                  <div className="stat-description">{feature.description}</div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
+
+          {/* Energy Curve Graph */}
+          <div className="energy-curve-section">
+            <h3 className="energy-curve-title">{solutionData.energyCurve.title}</h3>
+            <div className="energy-graph">
+              <svg className="energy-curve-svg" viewBox="0 0 700 200" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="energyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.05" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Area under curve */}
+                <path
+                  className="energy-area"
+                  d={`M 0,${200 - (solutionData.energyCurve.points[0].energy * 1.5)} 
+                      ${solutionData.energyCurve.points.map((point, i) => 
+                        `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${200 - (point.energy * 1.5)}`
+                      ).join(' ')} 
+                      L 700,200 L 0,200 Z`}
+                />
+                
+                {/* Curve line */}
+                <path
+                  className="energy-curve-line"
+                  d={`M 0,${200 - (solutionData.energyCurve.points[0].energy * 1.5)} 
+                      ${solutionData.energyCurve.points.map((point, i) => 
+                        `L ${(i / (solutionData.energyCurve.points.length - 1)) * 700},${200 - (point.energy * 1.5)}`
+                      ).join(' ')}`}
+                />
+                
+                {/* Data points */}
+                {solutionData.energyCurve.points.map((point, i) => {
+                  const x = (i / (solutionData.energyCurve.points.length - 1)) * 700;
+                  const y = 200 - (point.energy * 1.5);
+                  const isReset = point.label.includes('Reset');
+                  
+                  return (
+                    <g key={i}>
+                      <circle
+                        className={`energy-point ${isReset ? 'reset' : ''}`}
+                        cx={x}
+                        cy={y}
+                        r={isReset ? 8 : 5}
+                      />
+                      <text
+                        className="energy-label"
+                        x={x}
+                        y={y - 15}
+                        textAnchor="middle"
+                      >
+                        {point.time}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
 
           {/* How It Works - Visual First */}
           <section className="how-it-works-visual-section" id="how-it-works">
