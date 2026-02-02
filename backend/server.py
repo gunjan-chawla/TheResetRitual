@@ -85,6 +85,80 @@ async def get_status_checks():
     
     return status_checks
 
+# Email sending function
+async def send_email(subject: str, html_content: str, recipient: str = RECIPIENT_EMAIL):
+    """Send email using Gmail SMTP"""
+    try:
+        message = MIMEMultipart("alternative")
+        message["From"] = SMTP_USERNAME
+        message["To"] = recipient
+        message["Subject"] = subject
+        
+        html_part = MIMEText(html_content, "html")
+        message.attach(html_part)
+        
+        await aiosmtplib.send(
+            message,
+            hostname=SMTP_SERVER,
+            port=SMTP_PORT,
+            username=SMTP_USERNAME,
+            password=SMTP_PASSWORD,
+            start_tls=True
+        )
+        return True
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return False
+
+# Contact form submission endpoint
+@api_router.post("/contact")
+async def submit_contact_form(form_data: ContactFormSubmission):
+    """Handle contact form submissions and send email"""
+    try:
+        # Create email HTML content
+        html_content = f"""
+        <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <h2 style="color: #6B7454;">New Demo Request - Reset Rituals</h2>
+                <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+                    <p><strong>Name:</strong> {form_data.name}</p>
+                    <p><strong>Email:</strong> {form_data.email}</p>
+                    <p><strong>Company:</strong> {form_data.company}</p>
+                    <p><strong>Team Size:</strong> {form_data.employees}</p>
+                    {f'<p><strong>Phone:</strong> {form_data.phone}</p>' if form_data.phone else ''}
+                    {f'<p><strong>Message:</strong></p><p>{form_data.message}</p>' if form_data.message else ''}
+                </div>
+                <p style="margin-top: 20px; color: #666; font-size: 12px;">
+                    This email was sent from the Reset Rituals website contact form.
+                </p>
+            </body>
+        </html>
+        """
+        
+        # Send email
+        email_sent = await send_email(
+            subject=f"New Demo Request from {form_data.company}",
+            html_content=html_content
+        )
+        
+        if email_sent:
+            return {
+                "status": "success",
+                "message": "Your request has been submitted successfully. We'll be in touch within 24 hours."
+            }
+        else:
+            return {
+                "status": "error",
+                "message": "Failed to send email. Please try again or contact us directly."
+            }
+            
+    except Exception as e:
+        logger.error(f"Contact form error: {str(e)}")
+        return {
+            "status": "error",
+            "message": "An error occurred. Please try again later."
+        }
+
 # Include the router in the main app
 app.include_router(api_router)
 
