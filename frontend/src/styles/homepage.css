@@ -2008,108 +2008,150 @@ body {
   color: #14b8a6;
 }
 
-/* Power of Both Section */
+/* Power of Both Section - HIGHLIGHTED */
 .power-of-both-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border-radius: 24px;
-  padding: 3rem;
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #0d9488 100%);
+  border-radius: 32px;
+  padding: 4rem 3rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(20, 184, 166, 0.3);
+}
+
+.power-of-both-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .power-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 4vw, 32px);
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 2rem;
+  color: white;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .power-grid {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .power-of-both-section .power-card {
   background: white;
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
   flex: 1;
-  max-width: 320px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  max-width: 380px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.power-of-both-section .power-card:hover {
+  transform: translateY(-8px);
 }
 
 .power-of-both-section .power-card.daily {
-  border-top: 4px solid #14b8a6;
+  border-top: 6px solid #14b8a6;
 }
 
 .power-of-both-section .power-card.quarterly {
-  border-top: 4px solid #8b5cf6;
+  border-top: 6px solid #8b5cf6;
 }
 
 .power-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
 }
 
 .power-card.daily .power-icon {
-  background: rgba(20, 184, 166, 0.1);
-  color: #14b8a6;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(20, 184, 166, 0.05) 100%);
+  color: #0d9488;
+}
+
+.power-card.daily .power-icon svg {
+  width: 40px;
+  height: 40px;
 }
 
 .power-card.quarterly .power-icon {
-  background: rgba(139, 92, 246, 0.1);
-  color: #8b5cf6;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+  color: #7c3aed;
+}
+
+.power-card.quarterly .power-icon svg {
+  width: 40px;
+  height: 40px;
 }
 
 .power-card-title {
-  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .power-card-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: #64748b;
+  line-height: 1.6;
 }
 
 .power-plus {
-  font-size: 36px;
-  font-weight: 300;
-  color: #94a3b8;
+  font-size: 56px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .power-synthesis {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-  padding: 1.25rem 2rem;
-  border-radius: 12px;
-  max-width: 600px;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 3rem;
+  border-radius: 16px;
+  max-width: 700px;
   margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .synthesis-equals {
-  font-size: 28px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 40px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .synthesis-text {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive for Workshops */
@@ -2120,10 +2162,18 @@ body {
   
   .power-grid {
     flex-direction: column;
+    align-items: center;
+  }
+  
+  .power-of-both-section .power-card {
+    max-width: 100%;
+    width: 100%;
   }
   
   .power-plus {
     transform: rotate(90deg);
+    font-size: 48px;
+    margin: 1rem 0;
   }
 }
 
@@ -2142,11 +2192,32 @@ body {
   }
   
   .power-of-both-section {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+  
+  .power-title {
+    font-size: 28px;
+    margin-bottom: 2rem;
   }
   
   .power-of-both-section .power-card {
-    max-width: 100%;
+    padding: 2rem 1.5rem;
+  }
+  
+  .power-synthesis {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .synthesis-equals {
+    font-size: 32px;
+  }
+  
+  .synthesis-text {
+    font-size: 16px;
+    text-align: center;
   }
 }
 
