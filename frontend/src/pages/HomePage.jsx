@@ -264,24 +264,209 @@ const HomePage = () => {
             })}
           </div>
 
-          {/* How It Works */}
-          <div className="section-header" style={{ marginTop: '5rem' }}>
-            <h2 className="section-title">{solutionData.howItWorks.title}</h2>
-            <p className="section-subtitle">{solutionData.howItWorks.subtitle}</p>
-          </div>
-          <div className="steps-timeline">
-            <div className="steps-horizontal-grid">
-              {solutionData.howItWorks.steps.map((step, index) => (
-                <div key={index} className="step-item">
-                  <div className="step-number">{step.number}</div>
-                  <div className="step-content">
-                    <div className="step-title">{step.title}</div>
-                    <div className="step-description">{step.description}</div>
+          {/* How It Works - Visual First */}
+          <section className="how-it-works-visual-section" id="how-it-works">
+            <div className="how-it-works-container">
+              <div className="how-it-works-header">
+                <div className="how-it-works-stat-line">{solutionData.howItWorks.statLine}</div>
+                <h2 className="how-it-works-title">{solutionData.howItWorks.title}</h2>
+                <p className="how-it-works-subtitle">{solutionData.howItWorks.subtitle}</p>
+              </div>
+
+              {/* Calendar Hero Visual */}
+              <div className="calendar-hero-wrapper">
+                <div className="workday-calendar">
+                  <div className="time-column">
+                    <div className="time-slot">9:00 AM</div>
+                    <div className="time-slot">10:00 AM</div>
+                    <div className="time-slot">11:00 AM</div>
+                    <div className="time-slot">12:00 PM</div>
+                    <div className="time-slot">1:00 PM</div>
+                    <div className="time-slot">2:00 PM</div>
+                    <div className="time-slot">3:00 PM</div>
+                    <div className="time-slot">4:00 PM</div>
+                  </div>
+                  
+                  <div className="calendar-events">
+                    <div className="calendar-header-row">
+                      <div className="day-header">Monday</div>
+                      <div className="day-header">Tuesday</div>
+                      <div className="day-header">Wednesday</div>
+                      <div className="day-header">Thursday</div>
+                      <div className="day-header">Friday</div>
+                    </div>
+                    
+                    {/* Row 1: 9 AM */}
+                    <div className="calendar-day-column">
+                      <div className="event-block meeting">
+                        <div className="event-time">9:00-10:00</div>
+                        <div className="event-title">Team Standup</div>
+                      </div>
+                      <div className="event-block meeting">
+                        <div className="event-time">9:30-10:00</div>
+                        <div className="event-title">Planning</div>
+                      </div>
+                      <div></div>
+                      <div className="event-block meeting">
+                        <div className="event-time">9:00-9:45</div>
+                        <div className="event-title">1:1 Meeting</div>
+                      </div>
+                      <div></div>
+                    </div>
+                    
+                    {/* Row 2: 10 AM - Reset Ritual */}
+                    <div className="calendar-day-column">
+                      <div className="event-block reset-ritual">
+                        <div className="event-time">10:15-10:27</div>
+                        <div className="event-title">Reset Ritual 🌿</div>
+                        <div className="event-preview-popup">
+                          <div className="preview-title">Desk Stretch & Breathwork</div>
+                          <div className="preview-detail">⏱ 12 minutes</div>
+                          <div className="preview-detail">👤 Camera Optional</div>
+                          <div className="preview-detail">🎯 Release tension, boost energy</div>
+                        </div>
+                      </div>
+                      <div></div>
+                      <div className="event-block reset-ritual">
+                        <div className="event-time">10:30-10:42</div>
+                        <div className="event-title">Reset Ritual 🌿</div>
+                        <div className="event-preview-popup">
+                          <div className="preview-title">Focus Flow</div>
+                          <div className="preview-detail">⏱ 12 minutes</div>
+                          <div className="preview-detail">👤 Camera Optional</div>
+                          <div className="preview-detail">🎯 Mental clarity</div>
+                        </div>
+                      </div>
+                      <div></div>
+                      <div className="event-block reset-ritual">
+                        <div className="event-time">10:00-10:12</div>
+                        <div className="event-title">Reset Ritual 🌿</div>
+                        <div className="event-preview-popup">
+                          <div className="preview-title">Morning Energy</div>
+                          <div className="preview-detail">⏱ 12 minutes</div>
+                          <div className="preview-detail">👤 Camera Optional</div>
+                          <div className="preview-detail">🎯 Energize your day</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Row 3: 11 AM */}
+                    <div className="calendar-day-column">
+                      <div className="event-block meeting">
+                        <div className="event-time">11:00-12:00</div>
+                        <div className="event-title">Client Call</div>
+                      </div>
+                      <div className="event-block meeting">
+                        <div className="event-time">11:00-11:45</div>
+                        <div className="event-title">Design Review</div>
+                      </div>
+                      <div className="event-block meeting">
+                        <div className="event-time">11:00-12:00</div>
+                        <div className="event-title">Workshop</div>
+                      </div>
+                      <div></div>
+                      <div className="event-block meeting">
+                        <div className="event-time">11:30-12:00</div>
+                        <div className="event-title">Sprint Review</div>
+                      </div>
+                    </div>
+                    
+                    {/* Row 4: 12 PM - Lunch */}
+                    <div className="calendar-day-column"></div>
+                    
+                    {/* Row 5: 1 PM */}
+                    <div className="calendar-day-column">
+                      <div className="event-block meeting">
+                        <div className="event-time">1:00-2:00</div>
+                        <div className="event-title">Strategy</div>
+                      </div>
+                      <div></div>
+                      <div></div>
+                      <div className="event-block meeting">
+                        <div className="event-time">1:00-1:30</div>
+                        <div className="event-title">Sync</div>
+                      </div>
+                      <div></div>
+                    </div>
+                    
+                    {/* Row 6: 2 PM */}
+                    <div className="calendar-day-column">
+                      <div></div>
+                      <div className="event-block reset-ritual">
+                        <div className="event-time">2:30-2:42</div>
+                        <div className="event-title">Reset Ritual 🌿</div>
+                        <div className="event-preview-popup">
+                          <div className="preview-title">Afternoon Recharge</div>
+                          <div className="preview-detail">⏱ 12 minutes</div>
+                          <div className="preview-detail">👤 Camera Optional</div>
+                          <div className="preview-detail">🎯 Beat afternoon slump</div>
+                        </div>
+                      </div>
+                      <div className="event-block meeting">
+                        <div className="event-time">2:00-3:00</div>
+                        <div className="event-title">All Hands</div>
+                      </div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    
+                    {/* Row 7: 3 PM */}
+                    <div className="calendar-day-column">
+                      <div className="event-block meeting">
+                        <div className="event-time">3:00-4:00</div>
+                        <div className="event-title">Project Sync</div>
+                      </div>
+                      <div></div>
+                      <div></div>
+                      <div className="event-block meeting">
+                        <div className="event-time">3:30-4:30</div>
+                        <div className="event-title">Brainstorm</div>
+                      </div>
+                      <div className="event-block meeting">
+                        <div className="event-time">3:00-3:45</div>
+                        <div className="event-title">Training</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Trust Signals */}
+              <div className="trust-signals">
+                {solutionData.howItWorks.trustSignals.map((signal, index) => (
+                  <div key={index} className="trust-signal-item">
+                    <Check size={16} className="trust-check" />
+                    <span>{signal}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Simple 3 Steps */}
+              <div className="steps-simple-grid">
+                {solutionData.howItWorks.steps.map((step, index) => (
+                  <div key={index} className="step-simple-card">
+                    <div className="step-simple-number">{step.number}</div>
+                    <h3 className="step-simple-title">{step.title}</h3>
+                    <p className="step-simple-description">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Testimonial & CTA */}
+              <div className="how-it-works-cta-section">
+                <div className="how-it-works-testimonial">
+                  <p className="testimonial-text">"{solutionData.howItWorks.testimonial}"</p>
+                  <p className="testimonial-author-small">— {solutionData.howItWorks.testimonialAuthor}</p>
+                </div>
+                <Button 
+                  onClick={() => window.open(solutionData.howItWorks.cta.url, '_blank')}
+                  className="btn btn-primary btn-large"
+                >
+                  {solutionData.howItWorks.cta.text} <ArrowRight size={20} />
+                </Button>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
