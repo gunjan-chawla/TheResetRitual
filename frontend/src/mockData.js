@@ -140,57 +140,62 @@ export const problemData = {
 
 export const solutionData = {
   title: "Introducing Reset Rituals",
-  subtitle: "A different approach to workplace wellness",
-  features: [
+  subtitle: "A day in the life with Reset Rituals",
+  journeyMap: [
     {
-      icon: "monitor",
-      title: "Built for Hybrid",
-      description: "Live + in-office workshops"
+      time: "9:00 AM",
+      label: "Start Day",
+      icon: "coffee",
+      description: "Arrive at desk, morning energy",
+      energyLevel: "medium",
+      isReset: false
     },
     {
-      icon: "check-circle",
-      title: "Choice-Driven",
-      description: "Self-select based on needs (movement, breathwork, focus, recovery)"
-    },
-    {
-      icon: "clock",
-      title: "Fits the Workday",
-      description: "12 minutes, desk-friendly, no clothing change"
-    },
-    {
+      time: "11:45 AM",
+      label: "First Reset",
       icon: "activity",
-      title: "Actionable",
-      description: "Movement-led, guided experiences (not passive)"
+      description: "12-min Posture Correction",
+      energyLevel: "boosted",
+      isReset: true,
+      highlight: true
+    },
+    {
+      time: "1:00 PM",
+      label: "Post-Lunch",
+      icon: "target",
+      description: "Working focused",
+      energyLevel: "high",
+      isReset: false
+    },
+    {
+      time: "3:30 PM",
+      label: "Second Reset",
+      icon: "wind",
+      description: "12-min Breathwork",
+      energyLevel: "recharged",
+      isReset: true,
+      highlight: true
+    },
+    {
+      time: "5:00 PM",
+      label: "End Day",
+      icon: "smile",
+      description: "Finishing energized",
+      energyLevel: "high",
+      isReset: false
     }
   ],
-  howItWorks: {
-    title: "How It Works",
-    subtitle: "12 minutes. That's all it takes.",
-    trustSignals: ["Camera Optional", "No Prep", "Desk-Friendly"],
-    statLine: "Join 500+ companies resetting daily",
-    steps: [
-      { 
-        number: "1", 
-        title: "Connect Your Calendar",
-        description: "One-click integration with Google, Outlook, or Teams"
-      },
-      { 
-        number: "2", 
-        title: "Choose Your Rituals", 
-        description: "Select from movement, breathwork, meditation, or energy sessions"
-      },
-      { 
-        number: "3", 
-        title: "Reset & Recharge",
-        description: "Join live sessions or access on-demand—12 minutes that transform your day"
-      }
-    ],
-    cta: {
-      text: "Book a Demo",
-      url: "https://brightbreaks.com/learn/"
-    },
-    testimonial: "The calendar integration is genius. No friction, no excuses—just consistent wellness.",
-    testimonialAuthor: "Sarah M., Head of People"
+  energyCurve: {
+    title: "Energy Throughout Your Day",
+    points: [
+      { time: "9:00", energy: 60, label: "Morning Start" },
+      { time: "11:00", energy: 45, label: "Pre-Reset Dip" },
+      { time: "11:45", energy: 85, label: "Reset Boost" },
+      { time: "1:00", energy: 75, label: "Post-Lunch Focus" },
+      { time: "3:00", energy: 40, label: "Afternoon Slump" },
+      { time: "3:30", energy: 80, label: "Reset Recharge" },
+      { time: "5:00", energy: 75, label: "Strong Finish" }
+    ]
   }
 };
 
