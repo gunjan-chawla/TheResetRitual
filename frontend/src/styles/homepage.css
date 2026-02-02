@@ -2454,8 +2454,13 @@ body {
     height: 120px;
   }
   
+  .scene-illustration.square {
+    width: 160px;
+    height: 160px;
+  }
+  
   .timeline-track {
-    top: 120px;
+    top: 140px;
   }
 }
 
@@ -2466,9 +2471,13 @@ body {
     gap: 2rem;
   }
   
+  .journey-scenes.four-items {
+    justify-content: center;
+  }
+  
   .journey-scene {
-    flex: 0 0 calc(33.333% - 2rem);
-    max-width: none;
+    flex: 0 0 calc(50% - 2rem);
+    max-width: 250px;
   }
   
   .timeline-track {
@@ -2495,6 +2504,11 @@ body {
   .scene-illustration {
     width: 130px;
     height: 130px;
+  }
+  
+  .scene-illustration.square {
+    width: 160px;
+    height: 160px;
   }
   
   .timeline-marker {
