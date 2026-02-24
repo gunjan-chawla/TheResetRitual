@@ -894,6 +894,7 @@ img {
 
 .workshop-content {
   padding: 1.75rem;
+  text-align: center;
 }
 
 .workshop-category {
@@ -907,10 +908,12 @@ img {
 }
 
 .workshop-name {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .workshop-desc {
@@ -918,12 +921,14 @@ img {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.25rem;
+  text-align: center;
 }
 
 .workshop-features {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .workshop-feature {
