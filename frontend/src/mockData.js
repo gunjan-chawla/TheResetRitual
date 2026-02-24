@@ -317,6 +317,38 @@ export const comparisonData = {
 };
 
 export const impactData = {
+  // New Infographic Section
+  infographic: {
+    title: "Measurable Impact",
+    subtitle: "Science-backed results that transform workplace wellness",
+    cards: [
+      {
+        stat: "+21%",
+        title: "Productivity",
+        description: "Increase in profitability reported by organizations with highly engaged wellness programs.",
+        icon: "chart-line",
+        color: "indigo",
+        source: "Gallup Workplace Study"
+      },
+      {
+        stat: "-40%",
+        title: "Disease Risk",
+        description: "Reduction in chronic disease risk factors among employees participating in regular wellness activities.",
+        icon: "heart-pulse",
+        color: "teal",
+        featured: true,
+        source: "WHO Workplace Health"
+      },
+      {
+        stat: "+35%",
+        title: "Metabolic Health",
+        description: "Improvement in metabolic markers including stress hormones, sleep quality, and energy levels.",
+        icon: "dna",
+        color: "purple",
+        source: "Harvard Business Review"
+      }
+    ]
+  },
   hrDashboard: {
     title: "HR Dashboard",
     subtitle: "Wellness data — without invading privacy",
