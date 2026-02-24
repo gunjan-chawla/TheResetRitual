@@ -101,3 +101,85 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Working on Reset Ritual website from GitHub 'https://github.com/gunjan-chawla/TheResetRitual'. User requested changes to: 1) In-Office Workshop section - Remove 'Yoga +' prefix from workshop titles (Zumba, Nutrition, Social Wellness). 2) Impact & ROI Section - Replace with new infographic design showing 3 metric cards (+21% Productivity, -40% Disease Risk, +35% Metabolic Health)."
+
+backend:
+  - task: "API health check endpoint"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Basic GET endpoint working"
+
+  - task: "Contact form submission endpoint"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Contact form using FormSubmit.co, not backend API"
+
+frontend:
+  - task: "Workshop section title updates"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated workshop titles from 'Yoga + X' to just 'X' (Zumba, Nutrition, Social Wellness)"
+
+  - task: "New infographic impact section"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added new infographic section with 3 cards: Productivity (+21%), Disease Risk (-40%), Metabolic Health (+35%)"
+
+  - task: "Infographic CSS styling"
+    implemented: true
+    working: true
+    file: "frontend/src/styles/homepage.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added Oswald font, color-coded cards (indigo, teal, purple), hover animations"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Workshop section title updates"
+    - "New infographic impact section"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Implemented requested changes: 1) Workshop titles updated to remove 'Yoga +' prefix. 2) New infographic section added with 3 metric cards. Screenshots confirm both changes are rendering correctly."
