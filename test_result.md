@@ -201,3 +201,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Implemented requested changes: 1) Workshop titles updated to remove 'Yoga +' prefix. 2) New infographic section added with 3 metric cards. Screenshots confirm both changes are rendering correctly."
+  - agent: "testing"
+    message: "Backend API testing completed successfully. All core endpoints (GET /api/, POST /api/status, GET /api/status) are working correctly. Created backend_test.py for comprehensive API testing. Contact form endpoint structure is correct but email sending fails due to SMTP config (expected in test environment)."
