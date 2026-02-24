@@ -597,19 +597,19 @@ const HomePage = () => {
           </div>
           
           <div className="workshops-visual-grid">
-            {/* Workshop 1: Yoga + Zumba */}
+            {/* Workshop 1: Zumba */}
             <div className="workshop-visual-card">
               <div className="workshop-image-wrapper">
                 <img 
                   src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/b8172f027412990e15efa5e1318b824f62bc2b217582eba6ca60068c31f5bde7.png" 
-                  alt="Yoga and Zumba workshop illustration"
+                  alt="Zumba workshop illustration"
                   className="workshop-image"
                 />
                 <div className="workshop-badge energy">Energize</div>
               </div>
               <div className="workshop-content">
                 <span className="workshop-category">Wellness & Workplace Vibe</span>
-                <h3 className="workshop-name">Yoga + Zumba</h3>
+                <h3 className="workshop-name">Zumba</h3>
                 <p className="workshop-desc">Energetic sessions combining mindfulness and movement</p>
                 <div className="workshop-features">
                   <span className="workshop-feature"><Activity size={14} /> High Energy</span>
@@ -618,19 +618,19 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Workshop 2: Yoga + Nutrition */}
+            {/* Workshop 2: Nutrition */}
             <div className="workshop-visual-card">
               <div className="workshop-image-wrapper">
                 <img 
                   src="https://static.prod-images.emergentagent.com/jobs/a4c3a9b8-c24e-4a97-835c-d84ae46bceea/images/871f295a9d080bd7bf556e88c100a6e66941bdbae3ad385b51c1e4ab62e101b9.png" 
-                  alt="Yoga and Nutrition workshop illustration"
+                  alt="Nutrition workshop illustration"
                   className="workshop-image"
                 />
                 <div className="workshop-badge nourish">Nourish</div>
               </div>
               <div className="workshop-content">
                 <span className="workshop-category">Wellness & Nutrition Awareness</span>
-                <h3 className="workshop-name">Yoga + Nutrition</h3>
+                <h3 className="workshop-name">Nutrition</h3>
                 <p className="workshop-desc">Holistic approach to physical and dietary health</p>
                 <div className="workshop-features">
                   <span className="workshop-feature"><Heart size={14} /> Healthy Living</span>
@@ -639,7 +639,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Workshop 3: Yoga + Social Wellness */}
+            {/* Workshop 3: Social Wellness */}
             <div className="workshop-visual-card">
               <div className="workshop-image-wrapper">
                 <img 
@@ -651,7 +651,7 @@ const HomePage = () => {
               </div>
               <div className="workshop-content">
                 <span className="workshop-category">Community Building</span>
-                <h3 className="workshop-name">Yoga + Social Wellness</h3>
+                <h3 className="workshop-name">Social Wellness</h3>
                 <p className="workshop-desc">Strengthen team bonds through shared wellness</p>
                 <div className="workshop-features">
                   <span className="workshop-feature"><Users size={14} /> Partner Work</span>
