@@ -247,17 +247,17 @@ export const featuresData = {
     subtitle: "Quarterly community-building experiences",
     items: [
       {
-        title: "Yoga + Zumba",
+        title: "Zumba",
         subtitle: "Wellness & Workplace Vibe",
         description: "Energetic sessions combining mindfulness and movement"
       },
       {
-        title: "Yoga + Nutrition",
+        title: "Nutrition",
         subtitle: "Wellness & Nutrition Awareness",
         description: "Holistic approach to physical and dietary health"
       },
       {
-        title: "Yoga + Social Wellness",
+        title: "Social Wellness",
         subtitle: "Community Building",
         description: "Strengthen team bonds through shared wellness"
       }
