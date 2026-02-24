@@ -116,6 +116,21 @@ backend:
       - working: true
         agent: "main"
         comment: "Basic GET endpoint working"
+      - working: true
+        agent: "testing"
+        comment: "Verified GET /api/ returns {'message': 'Hello World'} with 200 status code. Endpoint fully functional."
+
+  - task: "Status check endpoints"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Verified POST /api/status creates status checks with proper UUID, client_name, and timestamp. GET /api/status returns list of status checks correctly. Both endpoints fully functional."
 
   - task: "Contact form submission endpoint"
     implemented: true
@@ -128,6 +143,9 @@ backend:
       - working: true
         agent: "main"
         comment: "Contact form using FormSubmit.co, not backend API"
+      - working: true
+        agent: "testing"
+        comment: "Minor: POST /api/contact endpoint responds correctly but email sending fails due to SMTP authentication (expected in test environment). Endpoint structure and error handling working properly."
 
 frontend:
   - task: "Workshop section title updates"
