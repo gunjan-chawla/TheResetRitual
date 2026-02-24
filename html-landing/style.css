@@ -1662,3 +1662,240 @@ img {
     justify-content: center;
   }
 }
+
+
+/* ========================================
+   INFOGRAPHIC SECTION - Impact Metrics
+   ======================================== */
+
+.infographic-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.infographic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.infographic-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.infographic-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.infographic-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Infographic Cards Grid */
+.infographic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.infographic-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.infographic-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Featured Card (Teal - middle) */
+.infographic-card.featured {
+  transform: scale(1.05);
+  border-bottom: 4px solid #0d9488;
+  z-index: 10;
+}
+
+.infographic-card.featured:hover {
+  transform: scale(1.05) translateY(-12px);
+}
+
+/* Icon Wrapper */
+.infographic-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.infographic-card:hover .infographic-icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Color Variants - Icon Wrappers */
+.infographic-icon-wrapper.indigo {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  color: #4f46e5;
+}
+
+.infographic-icon-wrapper.teal {
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  color: #0d9488;
+}
+
+.infographic-icon-wrapper.purple {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #9333ea;
+}
+
+/* Large Stat Number - Oswald Font */
+.infographic-stat {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(56px, 8vw, 80px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.infographic-stat.indigo {
+  color: #4f46e5;
+}
+
+.infographic-stat.teal {
+  color: #0d9488;
+}
+
+.infographic-stat.purple {
+  color: #9333ea;
+}
+
+/* Decorative Bar Under Stat */
+.infographic-stat-bar {
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.infographic-stat-bar.indigo {
+  background: #4f46e5;
+}
+
+.infographic-stat-bar.teal {
+  background: #0d9488;
+}
+
+.infographic-stat-bar.purple {
+  background: #9333ea;
+}
+
+/* Card Title */
+.infographic-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+/* Card Description */
+.infographic-card-desc {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Source Citation */
+.infographic-source {
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infographic-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.infographic-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.infographic-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .infographic-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 500px;
+  }
+  
+  .infographic-card.featured {
+    transform: scale(1);
+  }
+  
+  .infographic-card.featured:hover {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 640px) {
+  .infographic-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .infographic-card {
+    padding: 2rem;
+  }
+  
+  .infographic-stat {
+    font-size: 56px;
+  }
+  
+  .infographic-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    font-size: 26px;
+  }
+}
