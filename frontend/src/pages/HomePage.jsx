@@ -731,98 +731,127 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Impact & ROI Section */}
-      <section className="section section-alt" id="resources">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Impact & ROI</h2>
-            <p className="section-subtitle">Measurable results that matter to HR and employees</p>
+      {/* Impact & ROI Section - New Infographic Design */}
+      <section className="infographic-section" id="resources">
+        <div className="infographic-container">
+          <div className="infographic-header">
+            <h2 className="infographic-title">Measurable Impact</h2>
+            <p className="infographic-subtitle">Science-backed results that transform workplace wellness</p>
           </div>
 
-          {/* HR Dashboard */}
-          <div className="dashboard-mockup">
-            <div className="dashboard-header">
-              <h3 className="feature-title">{impactData.hrDashboard.title}</h3>
-              <p className="stat-description">{impactData.hrDashboard.subtitle}</p>
+          {/* Infographic Cards Grid */}
+          <div className="infographic-grid">
+            {/* Card 1: Productivity (Indigo) */}
+            <div className="infographic-card indigo">
+              <div className="infographic-icon-wrapper indigo">
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <h2 className="infographic-stat indigo">+21%</h2>
+              <div className="infographic-stat-bar indigo"></div>
+              <h3 className="infographic-card-title">Productivity</h3>
+              <p className="infographic-card-desc">
+                Increase in profitability reported by organizations with highly engaged wellness programs.
+              </p>
+              <p className="infographic-source">— Gallup Workplace Study</p>
             </div>
-            <div className="kpi-grid">
-              {impactData.hrDashboard.kpis.map((kpi, index) => (
-                <div key={index} className="kpi-card">
-                  <div className="kpi-title">{kpi.title}</div>
-                  <div className="kpi-value">{kpi.value}</div>
-                  <div className="kpi-trend">
-                    <TrendingDown size={16} style={{ transform: kpi.trend === 'up' ? 'rotate(180deg)' : 'none' }} />
-                    <span>{kpi.trend === 'up' ? 'Increasing' : 'Stable'}</span>
+
+            {/* Card 2: Disease Risk (Teal - Featured) */}
+            <div className="infographic-card teal featured">
+              <div className="infographic-icon-wrapper teal">
+                <i className="fas fa-heart-pulse"></i>
+              </div>
+              <h2 className="infographic-stat teal">-40%</h2>
+              <div className="infographic-stat-bar teal"></div>
+              <h3 className="infographic-card-title">Disease Risk</h3>
+              <p className="infographic-card-desc">
+                Reduction in chronic disease risk factors among employees participating in regular wellness activities.
+              </p>
+              <p className="infographic-source">— WHO Workplace Health</p>
+            </div>
+
+            {/* Card 3: Metabolic Health (Purple) */}
+            <div className="infographic-card purple">
+              <div className="infographic-icon-wrapper purple">
+                <i className="fas fa-dna"></i>
+              </div>
+              <h2 className="infographic-stat purple">+35%</h2>
+              <div className="infographic-stat-bar purple"></div>
+              <h3 className="infographic-card-title">Metabolic Health</h3>
+              <p className="infographic-card-desc">
+                Improvement in metabolic markers including stress hormones, sleep quality, and energy levels.
+              </p>
+              <p className="infographic-source">— Harvard Business Review</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Employee Impact Section */}
+      <section className="employee-impact-section">
+        <div className="employee-impact-container">
+          <div className="employee-impact-header">
+            <h2 className="employee-impact-title">{impactData.employeeImpact.title}</h2>
+            <p className="employee-impact-hero-statement">{impactData.employeeImpact.heroStatement}</p>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="employee-benefits-grid">
+            {impactData.employeeImpact.benefits.map((benefit, index) => {
+              const IconComponent = iconMap[benefit.icon];
+              return (
+                <div 
+                  key={index} 
+                  className="employee-benefit-card"
+                  style={{ '--benefit-color': benefit.color }}
+                >
+                  <div className="employee-benefit-icon-wrapper" style={{ background: benefit.color }}>
+                    {IconComponent && <IconComponent size={32} className="employee-benefit-icon" />}
                   </div>
+                  <h3 className="employee-benefit-title">{benefit.title}</h3>
+                  <p className="employee-benefit-description">{benefit.description}</p>
                 </div>
+              );
+            })}
+          </div>
+
+          {/* Testimonial */}
+          <div className="employee-testimonial-section">
+            <div className="testimonial-rating">
+              {[...Array(impactData.employeeImpact.testimonial.rating)].map((_, i) => (
+                <Star key={i} size={20} fill="#fbbf24" className="star-icon" />
               ))}
             </div>
-          </div>
-
-          {/* Employee Impact */}
-          <section className="employee-impact-section">
-            <div className="employee-impact-container">
-              <div className="employee-impact-header">
-                <h2 className="employee-impact-title">{impactData.employeeImpact.title}</h2>
-                <p className="employee-impact-hero-statement">{impactData.employeeImpact.heroStatement}</p>
+            <p className="testimonial-quote-large">{impactData.employeeImpact.testimonial.quote}</p>
+            <div className="testimonial-author-info">
+              <div className="testimonial-avatar">
+                {impactData.employeeImpact.testimonial.author.charAt(0)}
               </div>
-
-              {/* Benefits Grid */}
-              <div className="employee-benefits-grid">
-                {impactData.employeeImpact.benefits.map((benefit, index) => {
-                  const IconComponent = iconMap[benefit.icon];
-                  return (
-                    <div 
-                      key={index} 
-                      className="employee-benefit-card"
-                      style={{ '--benefit-color': benefit.color }}
-                    >
-                      <div className="employee-benefit-icon-wrapper" style={{ background: benefit.color }}>
-                        {IconComponent && <IconComponent size={32} className="employee-benefit-icon" />}
-                      </div>
-                      <h3 className="employee-benefit-title">{benefit.title}</h3>
-                      <p className="employee-benefit-description">{benefit.description}</p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Testimonial */}
-              <div className="employee-testimonial-section">
-                <div className="testimonial-rating">
-                  {[...Array(impactData.employeeImpact.testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} fill="#fbbf24" className="star-icon" />
-                  ))}
-                </div>
-                <p className="testimonial-quote-large">{impactData.employeeImpact.testimonial.quote}</p>
-                <div className="testimonial-author-info">
-                  <div className="testimonial-avatar">
-                    {impactData.employeeImpact.testimonial.author.charAt(0)}
-                  </div>
-                  <div className="testimonial-author-text">
-                    <p className="testimonial-author-name">{impactData.employeeImpact.testimonial.author.split(',')[0]}</p>
-                    <p className="testimonial-author-role">{impactData.employeeImpact.testimonial.author.split(',')[1]}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* CTAs */}
-              <div className="employee-impact-ctas">
-                {impactData.employeeImpact.ctas.map((cta, index) => (
-                  <Button
-                    key={index}
-                    onClick={scrollToContact}
-                    className={cta.type === 'primary' ? 'btn btn-primary btn-large' : 'btn btn-outline btn-large'}
-                  >
-                    {cta.label} <ArrowRight size={20} />
-                  </Button>
-                ))}
+              <div className="testimonial-author-text">
+                <p className="testimonial-author-name">{impactData.employeeImpact.testimonial.author.split(',')[0]}</p>
+                <p className="testimonial-author-role">{impactData.employeeImpact.testimonial.author.split(',')[1]}</p>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* Organizational Benefits */}
-          <div className="section-header" style={{ marginTop: '5rem' }}>
+          {/* CTAs */}
+          <div className="employee-impact-ctas">
+            {impactData.employeeImpact.ctas.map((cta, index) => (
+              <Button
+                key={index}
+                onClick={scrollToContact}
+                className={cta.type === 'primary' ? 'btn btn-primary btn-large' : 'btn btn-outline btn-large'}
+              >
+                {cta.label} <ArrowRight size={20} />
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Organizational Benefits */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header">
             <h2 className="section-title">{impactData.organizationalBenefits.title}</h2>
           </div>
           <div className="features-grid">
