@@ -1024,9 +1024,12 @@ const HomePage = () => {
                 {item.label}
               </a>
             ))}
+            <a href="/privacy-policy" className="footer-link">
+              Privacy Policy
+            </a>
           </div>
           <div className="footer-copyright">
-            © 2025 Reset Rituals. All rights reserved.
+            © 2026 Reset Rituals by ThePro.Fit. All rights reserved.
           </div>
         </div>
       </footer>
