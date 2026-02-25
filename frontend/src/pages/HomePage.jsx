@@ -1012,7 +1012,7 @@ const HomePage = () => {
             </div>
             <div className="contact-item">
               <Linkedin size={18} className="contact-icon" />
-              <a href={finalCTAData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link-text">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/reset-ritual" target="_blank" rel="noopener noreferrer" className="contact-link-text">linkedin.com/company/reset-ritual</a>
             </div>
           </div>
         </div>
