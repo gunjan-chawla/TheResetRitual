@@ -1862,6 +1862,40 @@ img {
 
 .infographic-card:nth-child(2) {
   animation-delay: 0.2s;
+
+
+/* Contact Info in Final CTA */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.contact-item i {
+  color: var(--olive-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.contact-link-text {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link-text:hover {
+  color: var(--olive-primary);
+}
 }
 
 .infographic-card:nth-child(3) {
