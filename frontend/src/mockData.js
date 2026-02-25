@@ -425,12 +425,7 @@ export const finalCTAData = {
 
 export const footerData = {
   navigation: [
-    { label: "About", href: "#about" },
-    { label: "Methodology", href: "#methodology" },
-    { label: "Resources", href: "#resources" },
-    { label: "Blog", href: "#blog" },
-    { label: "Privacy Policy", href: "#privacy" },
-    { label: "Terms", href: "#terms" }
+    { label: "About", href: "#" }
   ]
 };
 
