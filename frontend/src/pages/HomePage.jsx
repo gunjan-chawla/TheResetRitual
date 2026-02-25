@@ -58,12 +58,9 @@ const HomePage = () => {
       {/* Navigation */}
       <nav className="nav-header">
         <div className="nav-content">
-          <div className="nav-logo">
-            <div className="nav-logo-icon">
-              <Leaf size={20} />
-            </div>
-            <span className="nav-logo-text">{navigation.logo}</span>
-          </div>
+          <a href="#" className="nav-logo">
+            <img src="/logo.png" alt="Reset Rituals" className="nav-logo-image" />
+          </a>
           <div className="nav-menu">
             {navigation.menuItems.map((item, index) => (
               <a key={index} href={item.href} className="nav-link">
