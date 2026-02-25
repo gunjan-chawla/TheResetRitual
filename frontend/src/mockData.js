@@ -418,9 +418,8 @@ export const finalCTAData = {
     { label: "Download Brochure", primary: false }
   ],
   contact: {
-    email: "hello@resetrituals.com",
-    phone: "+91 98765 43210",
-    linkedin: "linkedin.com/company/reset-rituals"
+    email: "Gunjan@thepro.fit",
+    linkedin: "https://www.linkedin.com/company/reset-ritual"
   }
 };
 
