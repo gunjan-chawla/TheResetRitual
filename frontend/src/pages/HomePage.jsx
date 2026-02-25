@@ -1008,15 +1008,11 @@ const HomePage = () => {
           <div className="contact-info">
             <div className="contact-item">
               <Mail size={18} className="contact-icon" />
-              <span>{finalCTAData.contact.email}</span>
-            </div>
-            <div className="contact-item">
-              <Phone size={18} className="contact-icon" />
-              <span>{finalCTAData.contact.phone}</span>
+              <a href={`mailto:${finalCTAData.contact.email}`} className="contact-link-text">{finalCTAData.contact.email}</a>
             </div>
             <div className="contact-item">
               <Linkedin size={18} className="contact-icon" />
-              <span>{finalCTAData.contact.linkedin}</span>
+              <a href={finalCTAData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link-text">LinkedIn</a>
             </div>
           </div>
         </div>
