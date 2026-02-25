@@ -1,0 +1,269 @@
+/* Privacy Policy Page Styles */
+
+.privacy-policy-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #faf9f6 0%, #f5f3ef 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.privacy-header {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.privacy-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7b3a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #4a5a2a;
+}
+
+.privacy-logo-image {
+  height: 36px;
+  width: auto;
+}
+
+/* Main Content */
+.privacy-main {
+  padding: 3rem 2rem 4rem;
+}
+
+.privacy-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Title Section */
+.privacy-title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.privacy-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #6b7b3a, #8a9a5b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+}
+
+.privacy-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-last-updated {
+  color: #64748b;
+  font-size: 0.9375rem;
+}
+
+/* Introduction */
+.privacy-intro {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #6b7b3a;
+}
+
+.privacy-intro p {
+  color: #374151;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Policy Sections */
+.privacy-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.privacy-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.privacy-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.privacy-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.privacy-section p {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-section ul {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.privacy-section li {
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-section li::marker {
+  color: #6b7b3a;
+}
+
+.privacy-note {
+  background: #fef3c7;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: #92400e;
+  margin-top: 0.75rem;
+}
+
+/* Contact Section */
+.privacy-contact-card {
+  background: linear-gradient(135deg, #f8faf5 0%, #f0f4e8 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border: 1px solid #d4e0c4;
+}
+
+.privacy-contact-card h3 {
+  margin: 0 0 0.5rem;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+}
+
+.privacy-contact-card .gst-info {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7b3a;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.privacy-email:hover {
+  background: #6b7b3a;
+  color: white;
+}
+
+/* Footer CTA */
+.privacy-footer-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.privacy-footer-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #6b7b3a;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.privacy-footer-cta .btn:hover {
+  background: #5a6a2f;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.privacy-footer {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.privacy-footer p {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-header {
+    padding: 1rem;
+  }
+  
+  .privacy-main {
+    padding: 2rem 1rem 3rem;
+  }
+  
+  .privacy-section {
+    padding: 1.5rem;
+  }
+  
+  .privacy-intro {
+    padding: 1.5rem;
+  }
+  
+  .privacy-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .privacy-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}
