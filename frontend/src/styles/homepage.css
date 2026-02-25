@@ -2292,6 +2292,16 @@ body {
   color: var(--olive-primary);
 }
 
+.contact-link-text {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link-text:hover {
+  color: var(--olive-primary);
+}
+
 /* Footer */
 .footer {
   background: var(--text-primary);
