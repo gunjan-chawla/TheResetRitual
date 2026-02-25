@@ -3,10 +3,10 @@
 export const navigation = {
   logo: "Reset Rituals",
   menuItems: [
-    { label: "Homepage", href: "#" },
+    { label: "About Us", href: "#" },
     { label: "Solutions", href: "#solutions" },
     { label: "How it works", href: "#how-it-works" },
-    { label: "Insight", href: "#insight" }
+    { label: "Use Case", href: "#insight" }
   ],
   cta: "Book a Ritual"
 };
