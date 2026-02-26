@@ -59,55 +59,56 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-calendar-mockup">
-          <div class="calendar-header">
-            <span class="calendar-title">This Week's Rituals</span>
+        <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-width: 480px; position: relative;">
+          <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #f0f0f0;">
+            <span style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.25rem; color: #1a1a1a;">This Week's Rituals</span>
           </div>
-          <div class="calendar-grid">
-            <!-- Row 1: Day headers -->
-            <div class="calendar-day-header">Mon</div>
-            <div class="calendar-day-header">Tue</div>
-            <div class="calendar-day-header">Wed</div>
-            <div class="calendar-day-header">Thu</div>
-            <div class="calendar-day-header">Fri</div>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+            <!-- Day Headers -->
+            <div style="text-align: center; font-size: 0.75rem; font-weight: 600; color: #64748b; padding: 0.5rem; border-bottom: 1px solid #f0f0f0;">Mon</div>
+            <div style="text-align: center; font-size: 0.75rem; font-weight: 600; color: #64748b; padding: 0.5rem; border-bottom: 1px solid #f0f0f0;">Tue</div>
+            <div style="text-align: center; font-size: 0.75rem; font-weight: 600; color: #64748b; padding: 0.5rem; border-bottom: 1px solid #f0f0f0;">Wed</div>
+            <div style="text-align: center; font-size: 0.75rem; font-weight: 600; color: #64748b; padding: 0.5rem; border-bottom: 1px solid #f0f0f0;">Thu</div>
+            <div style="text-align: center; font-size: 0.75rem; font-weight: 600; color: #64748b; padding: 0.5rem; border-bottom: 1px solid #f0f0f0;">Fri</div>
             
-            <!-- Row 2: Session cards -->
-            <div class="calendar-day-content">
-              <div class="session-card">
-                <div class="session-time">10:00 AM</div>
-                <div class="session-title">Desk Stretch</div>
+            <!-- Session Cards -->
+            <div style="padding-top: 0.5rem;">
+              <div style="background: linear-gradient(135deg, #f0f4e8, #e8ede0); border-radius: 8px; padding: 0.6rem; border-left: 3px solid #6b7b3a;">
+                <div style="font-size: 0.65rem; font-weight: 600; color: #64748b;">10:00 AM</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: #1a1a1a; margin-top: 0.2rem;">Desk Stretch</div>
               </div>
             </div>
-            <div class="calendar-day-content">
-              <div class="session-card breathwork">
-                <div class="session-time">2:30 PM</div>
-                <div class="session-title">Breathwork</div>
+            <div style="padding-top: 0.5rem;">
+              <div style="background: linear-gradient(135deg, #fef3e8, #fdecd8); border-radius: 8px; padding: 0.6rem; border-left: 3px solid #f59e0b;">
+                <div style="font-size: 0.65rem; font-weight: 600; color: #64748b;">2:30 PM</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: #1a1a1a; margin-top: 0.2rem;">Breathwork</div>
               </div>
             </div>
-            <div class="calendar-day-content">
-              <div class="session-card movement">
-                <div class="session-time">11:15 AM</div>
-                <div class="session-title">Focus Flow</div>
+            <div style="padding-top: 0.5rem;">
+              <div style="background: linear-gradient(135deg, #e8f4f0, #d8ede8); border-radius: 8px; padding: 0.6rem; border-left: 3px solid #0d9488;">
+                <div style="font-size: 0.65rem; font-weight: 600; color: #64748b;">11:15 AM</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: #1a1a1a; margin-top: 0.2rem;">Focus Flow</div>
               </div>
             </div>
-            <div class="calendar-day-content">
-              <div class="session-card">
-                <div class="session-time">3:00 PM</div>
-                <div class="session-title">Energy Boost</div>
+            <div style="padding-top: 0.5rem;">
+              <div style="background: linear-gradient(135deg, #f0f4e8, #e8ede0); border-radius: 8px; padding: 0.6rem; border-left: 3px solid #6b7b3a;">
+                <div style="font-size: 0.65rem; font-weight: 600; color: #64748b;">3:00 PM</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: #1a1a1a; margin-top: 0.2rem;">Energy Boost</div>
               </div>
             </div>
-            <div class="calendar-day-content">
-              <div class="session-card breathwork">
-                <div class="session-time">10:30 AM</div>
-                <div class="session-title">Meditation</div>
+            <div style="padding-top: 0.5rem;">
+              <div style="background: linear-gradient(135deg, #fef3e8, #fdecd8); border-radius: 8px; padding: 0.6rem; border-left: 3px solid #f59e0b;">
+                <div style="font-size: 0.65rem; font-weight: 600; color: #64748b;">10:30 AM</div>
+                <div style="font-size: 0.75rem; font-weight: 600; color: #1a1a1a; margin-top: 0.2rem;">Meditation</div>
               </div>
             </div>
           </div>
-          <div class="up-next-card">
-            <div class="up-next-label">Up Next</div>
-            <div class="up-next-title">Desk Stretch - 12 min</div>
-            <div class="play-button">
-              <i data-lucide="play"></i>
+          <!-- Up Next Card -->
+          <div style="position: absolute; bottom: -20px; right: -20px; background: white; border-radius: 12px; padding: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.15); border: 1px solid #e5e5e5;">
+            <div style="font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7b3a; margin-bottom: 0.4rem;">Up Next</div>
+            <div style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem; font-size: 0.9rem;">Desk Stretch - 12 min</div>
+            <div style="width: 36px; height: 36px; background: #6b7b3a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+              <i data-lucide="play" style="width: 16px; height: 16px;"></i>
             </div>
           </div>
         </div>
