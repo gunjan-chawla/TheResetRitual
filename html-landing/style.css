@@ -2253,14 +2253,15 @@ img {
 .hero-calendar-mockup {
   background: white;
   border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   position: relative;
   border: 1px solid #e5e5e5;
+  max-width: 500px;
 }
 
 .hero-calendar-mockup .calendar-header {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -2268,7 +2269,7 @@ img {
 .hero-calendar-mockup .calendar-title {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #1a1a1a;
 }
 
@@ -2278,13 +2279,17 @@ img {
   gap: 0.75rem;
 }
 
-.hero-calendar-mockup .calendar-day {
+.calendar-day-header {
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
   color: #64748b;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.calendar-day-content {
+  min-height: 80px;
 }
 
 .session-card {
@@ -2292,6 +2297,12 @@ img {
   border-radius: 8px;
   padding: 0.75rem;
   border-left: 3px solid #6b7b3a;
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .session-card.breathwork {
@@ -2305,13 +2316,13 @@ img {
 }
 
 .session-time {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #64748b;
 }
 
 .session-title {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #1a1a1a;
   margin-top: 0.25rem;
@@ -2324,7 +2335,7 @@ img {
   background: white;
   border-radius: 12px;
   padding: 1.25rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border: 1px solid #e5e5e5;
 }
 
@@ -2365,6 +2376,32 @@ img {
   width: 18px;
   height: 18px;
   fill: white;
+}
+
+/* Hero Visual Layout */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero-calendar-mockup {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .hero-calendar-mockup .calendar-grid {
+    gap: 0.5rem;
+  }
+  
+  .session-card {
+    padding: 0.5rem;
+  }
+  
+  .session-title {
+    font-size: 0.7rem;
+  }
 }
   color: #115e59;
   margin-bottom: 12px;
