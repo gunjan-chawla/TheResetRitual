@@ -1945,3 +1945,366 @@ img {
     font-size: 26px;
   }
 }
+
+
+/* ========================================
+   PROBLEM SECTION - Stats & Challenges
+   ======================================== */
+
+/* Section Containers */
+.section {
+  padding: 6rem 3rem;
+}
+
+.section-alt {
+  background: var(--bg-cream);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+/* Problem Section - Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e5e5;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  background: #f0f4e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7b3a;
+  margin-bottom: 1.5rem;
+}
+
+.stat-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6b7b3a;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.stat-description {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.stat-source {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* India Stats - 6 column grid */
+.india-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.india-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e5e5;
+}
+
+.india-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4a5a5;
+  margin-bottom: 0.5rem;
+}
+
+/* Challenges Section - Two Column Comparison */
+.challenges-section {
+  background: white;
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+  border-radius: 24px;
+}
+
+.challenges-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.challenges-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.challenges-overline {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.challenges-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+/* Employee Barriers - Left Column */
+.employee-barriers {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  height: 100%;
+}
+
+.organizational-hurdles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.column-header.blue {
+  border-bottom: 3px solid #2563eb;
+}
+
+.column-header.teal {
+  border-bottom: 3px solid #0d9488;
+}
+
+.column-header-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.column-header-icon.blue {
+  color: #2563eb;
+}
+
+.column-header-icon.teal {
+  color: #0d9488;
+}
+
+.column-header-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.column-header-title.blue {
+  color: #2563eb;
+}
+
+.column-header-title.teal {
+  color: #0d9488;
+}
+
+.barrier-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+}
+
+.barrier-percentage {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #2563eb;
+  line-height: 1;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.barrier-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.barrier-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.barrier-description {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Organizational Hurdles - Right Column */
+.hurdle-card {
+  background: #f0fdfa;
+  border-left: 6px solid #0d9488;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hurdle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hurdle-icon-badge {
+  width: 48px;
+  height: 48px;
+  background: #ccfbf1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d9488;
+  margin-bottom: 16px;
+}
+
+.hurdle-icon-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hurdle-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #115e59;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hurdle-description {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.challenges-citation {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 40px;
+  text-align: left;
+}
+
+/* Responsive Design for Challenges */
+@media (max-width: 1024px) {
+  .challenges-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .challenges-title {
+    font-size: 32px;
+  }
+  
+  .barrier-percentage {
+    font-size: 48px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .india-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .challenges-section {
+    padding: 30px 20px;
+  }
+  
+  .barrier-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .barrier-percentage {
+    font-size: 40px;
+    min-width: auto;
+  }
+}
