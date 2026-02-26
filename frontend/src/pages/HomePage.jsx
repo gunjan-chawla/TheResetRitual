@@ -360,7 +360,7 @@ const HomePage = () => {
           <section className="how-it-works-visual-section" id="how-it-works">
             <div className="how-it-works-container">
               <div className="how-it-works-header">
-                <div className="how-it-works-stat-line">{solutionData.howItWorks.statLine}</div>
+                {solutionData.howItWorks.statLine && <div className="how-it-works-stat-line">{solutionData.howItWorks.statLine}</div>}
                 <h2 className="how-it-works-title">{solutionData.howItWorks.title}</h2>
                 <p className="how-it-works-subtitle">{solutionData.howItWorks.subtitle}</p>
               </div>
