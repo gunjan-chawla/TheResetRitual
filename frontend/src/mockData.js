@@ -202,7 +202,7 @@ export const solutionData = {
     title: "How It Works",
     subtitle: "12 minutes. That's all it takes.",
     trustSignals: ["Camera Optional", "No Prep", "Desk-Friendly"],
-    statLine: "Join 500+ companies resetting daily",
+    statLine: "",
     steps: [
       { 
         number: "1", 
